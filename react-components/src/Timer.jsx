@@ -34,13 +34,17 @@ class Timer extends React.Component {
     localStorage.removeItem('timerSeconds')
   }
 
-  spaceSwitch = (e) => {
+  keyboardControl = (e) => {
     if (e.code === 'Space') {
       if (this.state.isTimerWorks) {
         this.stopTimer()
       } else {
         this.startTimer()
       }
+    }
+
+    if (e.code === 'Backspace') {
+      this.resetTimer()
     }
   }
 
@@ -58,7 +62,7 @@ class Timer extends React.Component {
 
   render() {
     return (
-      <section onKeyDown={(e) => this.spaceSwitch(e)} className='Timer h-screen flex items-center justify-center bg-gradient-to-r from-cyan-500 to-blue-500' tabIndex="0">
+      <section onKeyDown={(e) => this.keyboardControl(e)} className='Timer h-screen flex items-center justify-center bg-gradient-to-r from-cyan-500 to-blue-500' tabIndex="0">
         <div className='timer-wrapper flex flex-col items-center w-11/12 sm:w-9/12 h-3/5 min-w-max py-4 bg-stone-900 text-slate-50 rounded-3xl shadow-2xl shadow-black/50'>
           <h1 className='font-mono text-5xl tracking-wide text-inherit mt-2'>React Timer</h1>
           <div className='flex flex-col my-auto'>
