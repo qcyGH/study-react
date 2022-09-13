@@ -48,6 +48,10 @@ class Timer extends React.Component {
     }
   }
 
+  showHint = (e) => {
+    e.target.innerHTML = 'Space = start/stop<br>Backspace = reset'
+  }
+
   // Time format
 
   humanReadable (seconds) {
@@ -63,7 +67,7 @@ class Timer extends React.Component {
   render() {
     return (
       <section onKeyDown={(e) => this.keyboardControl(e)} className='Timer h-screen flex items-center justify-center bg-gradient-to-r from-cyan-500 to-blue-500' tabIndex="0">
-        <div className='timer-wrapper flex flex-col items-center w-11/12 sm:w-9/12 h-3/5 min-w-max py-4 bg-stone-900 text-slate-50 rounded-3xl shadow-2xl shadow-black/50'>
+        <div className='relative timer-wrapper flex flex-col items-center w-11/12 sm:w-9/12 h-3/5 min-w-max py-4 bg-stone-900 text-slate-50 rounded-3xl shadow-2xl shadow-black/50'>
           <h1 className='font-mono text-5xl tracking-wide text-inherit mt-2'>React Timer</h1>
           <div className='flex flex-col my-auto'>
             <span className='font-mono text-5xl my-5 text-inherit bg-blue-700 px-3 py-1 rounded-full shadow-sm shadow-blue-900'>{this.humanReadable(this.state.seconds)}</span>
@@ -76,6 +80,11 @@ class Timer extends React.Component {
               <button className='font-mono text-lg bg-indigo-50 text-black py-1 px-4 rounded-lg hover:rounded-xl ml-3 shadow shadow-indigo-50/50 transition-all duration-150 ease-in hover:shadow-indigo-100/80 hover:bg-white active:shadow-none' onClick={this.resetTimer}>Reset</button>
             </div>
           </div>
+          <span
+            onMouseEnter={(e) => this.showHint(e)}
+            onMouseLeave={(e) => e.target.innerHTML = '?'}
+            className='absolute top-6 right-7 rounded-full bg-white text-black px-2 hover:py-1 hover:rounded-xl'
+          >?</span>
         </div>
       </section>
     )
