@@ -3,7 +3,7 @@ export function Post (props) {
         {props.name}
         <button
             onClick={e => props.func(props.id)}
-            className="font-mono text-lg bg-blue-800 text-slate-100 mx-3 py-1 px-4 rounded-lg hover:rounded-xl shadow shadow-blue-800/50 transition-all duration-150  ease-in hover:shadow-blue-800/80 hover:bg-blue-700 active:shadow-none"
+            className="font-mono text-lg bg-rose-800 text-slate-100 mx-3 py-1 px-4 rounded-lg hover:rounded-xl shadow shadow-rose-800/50 transition-all duration-150  ease-in hover:shadow-rose-800/80 hover:bg-rose-700 active:shadow-none"
         >
             Delete
         </button>
