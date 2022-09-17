@@ -48,10 +48,6 @@ class Timer extends React.Component {
     }
   }
 
-  showHint = (e) => {
-    e.target.innerHTML = 'Space = start/stop<br>Backspace = reset'
-  }
-
   // Time format
 
   humanReadable (seconds) {
@@ -81,7 +77,7 @@ class Timer extends React.Component {
             </div>
           </div>
           <span
-            onMouseEnter={(e) => this.showHint(e)}
+            onMouseEnter={(e) => e.target.innerHTML = 'Space = start/stop<br>Backspace = reset'}
             onMouseLeave={(e) => e.target.innerHTML = '?'}
             className='absolute top-6 right-7 rounded-full bg-white text-black px-2 hover:py-1 hover:rounded-xl'
           >?</span>
