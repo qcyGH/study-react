@@ -337,7 +337,7 @@ class Form extends React.Component {
  }
 }
 ```
-Тепер, щоб `input` так як треба, ми повині додати `onChange` до цього `input`:
+Тепер, щоб `input` працював так як треба, ми повині додати `onChange` до цього `input`:
 ```js
 class Form extends React.Component {
  state = {
