@@ -311,6 +311,60 @@ function NumberList(props) {
   );
 }
 ```
+
+#### Forms
+
+Для того, щоб `input` управлявся з React, треба прив'язати значення `value` до `state` в классовому компоненті. Виглядає це так:
+```js
+class Form extends React.Component {
+ state = {
+  firstName: '',
+ }
+ 
+ render() {
+  const {firstName} = this.state
+  
+  return (
+   <div>
+    <input
+     type='text'
+     name='firstName'
+     placeholder='First name'
+     value={firstName}
+    />
+   </div>
+  )
+ }
+}
+```
+Тепер, щоб `input` так як треба, ми повині додати `onChange` до цього `input`:
+```js
+class Form extends React.Component {
+ state = {
+  firstName: '',
+ }
+ 
+ handleChange = (e) => {
+  this.setState({[e.target.name]: e.target.value}) // використовуємо [e.target.name], щоб динамічно пов'язувати input з state, та не писати для кожного input свою функцію
+ }
+ 
+ render() {
+  const {firstName} = this.state
+  
+  return (
+   <div>
+    <input
+     onChange={this.handleChange}
+     type='text'
+     name='firstName'
+     placeholder='First name'
+     value={firstName}
+    />
+   </div>
+  )
+ }
+}
+```
 ## Apps
 
 ### Timer
