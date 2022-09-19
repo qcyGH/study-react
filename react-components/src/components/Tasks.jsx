@@ -1,7 +1,7 @@
 import {Task} from './Task'
 
 export function Tasks (props) {
-    if (props.tasks.length !== 0) {
+    if (props.tasks !== null && props.tasks.length !== 0) {
         return (
             <div className='my-24'>
                 {
