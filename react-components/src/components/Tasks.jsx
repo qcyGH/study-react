@@ -1,9 +1,9 @@
 import {Task} from './Task'
 
 export function Tasks (props) {
-    if (props.tasks !== null) {
+    if (props.tasks.length !== 0) {
         return (
-            <div>
+            <div className='my-24'>
                 {
                     props.tasks.map(task => (
                         <Task func={props.func} id={task.id} key={task.id} name={task.name}/>
