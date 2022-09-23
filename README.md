@@ -365,6 +365,76 @@ class Form extends React.Component {
  }
 }
 ```
+Forms cheatsheet:
+```js
+class Form extends React.Component {
+ state = {
+  firstName: '',
+  email: '',
+  message: '',
+  select: '',
+  subscription: false;
+  gender: ''
+ }
+ 
+ handleChange = (e) => {
+  this.setState({[e.target.name]: e.target.value}) // використовуємо [e.target.name], щоб динамічно пов'язувати input з state, та не писати для кожного input свою функцію
+ }
+ 
+ handleCheckboxChange = (e) => {
+  this.setState({[e.target.name]: e.target.checked})
+ }
+ 
+ render() {
+  const {firstName, email, message, select, subscription, gender} = this.state
+  
+  return (
+   <div>
+    <input
+     onChange={this.handleChange}
+     type='text'
+     name='firstName'
+     placeholder='First name'
+     value={firstName}
+    />
+    <input
+     onChange={this.handleChange}
+     type='email'
+     name='email'
+     placeholder='email'
+     value={email}
+    />
+    <br />
+    <textarea
+     onChange={this.handleChange}
+     name='message'
+     value='message'
+    />
+    <br />
+    <select name='select' velue={select} onChange={this.handleChange}>
+     <option value='' disabled></option>
+     <option value='1'>1</option>
+     <option value='2'>2</option>
+     <option value='3'>3</option>
+    </select>
+    <br />
+    <label>
+     <input
+      onChange={this.handleCheckboxChange}
+      type='checkbox'
+      name='subscription'
+      checked={subscription}
+     />
+     Subscription
+    </label>
+    <br />
+    <input onChange={this.handleChange} type='radio' name='gender' value='male' checked={gender === 'male'}/>
+    <input onChange={this.handleChange} type='radio' name='gender' value='female' checked={gender === 'female'}/>
+   </div>
+  )
+ }
+}
+```
 ## Apps
 
 ### Timer
