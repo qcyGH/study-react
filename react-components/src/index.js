@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 //import Timer from './Timer';
 // import List from './List'
-import Todo from './Todo'
+// import Todo from './Todo'
+import Form from './Form'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Todo />
+    <Form />
   </React.StrictMode>
 )
