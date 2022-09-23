@@ -401,7 +401,7 @@ class Form extends React.Component {
      onChange={this.handleChange}
      type='email'
      name='email'
-     placeholer='email'
+     placeholder='email'
      value={email}
     />
     <br />
