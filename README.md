@@ -435,6 +435,36 @@ class Form extends React.Component {
  }
 }
 ```
+
+`React.createRef` створює посилання, яке може бути додане до елемента React через ref атрибут.
+```js
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.inputRef = React.createRef();
+  }
+
+  render() {
+    return <input type="text" ref={this.inputRef} />;  
+  }
+
+  componentDidMount() {
+    this.inputRef.current.focus();  
+  }
+}
+```
+Коли використовувати рефи
+
+Існує декілька ситуацій, коли доцільно використовувати рефи:
+
+- Контроль фокусу, виділення тексту чи контроль програвання медіа.
+- Виклик імперативної анімації.
+- Інтеграція зі сторонніми DOM-бібліотеками.
+
+Уникайте використання рефів для будь-чого, що можна зробити декларативно.
+
+Наприклад, замість виклику методів `open()` та `close()` компоненту `Dialog`, передайте йому проп `isOpen`.
 ## Apps
 
 ### Timer
