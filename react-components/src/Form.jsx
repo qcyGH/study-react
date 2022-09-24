@@ -42,14 +42,14 @@ class Form extends React.Component {
                     <h1 className='font-mono absolute top-6 text-5xl tracking-wide text-inherit mt-2'>Subscribe form</h1>
                     <form onSubmit={e => this.verifyForm(e)} action="submit" className='flex flex-col items-start'>
                         <input
-                        className='font-mono text-xl text-zinc-900 bg-neutral-50 rounded-lg p-1 focus-visible:outline focus-visible:outline-indigo-500 outline-offset-0'
+                        className='font-mono text-xl text-zinc-900 bg-neutral-50 rounded-lg border-none p-1 focus-visible:outline focus-visible:outline-indigo-500 focus:outline-4 focus:border-none focus:shadow-none focus:ring-0 focus:outline-offset-0'
                         onChange={this.handleChange}
                         type='email'
                         name='email'
                         placeholder='email'
                         value={email}
                         />
-                        <label className='my-2'>
+                        <label className='mt-1 mb-4'>
                             <input
                             className='w-4 h-4 text-indigo-500 bg-gray-100 rounded border-gray-300 focus:ring-indigo-600 focus:ring-2 focus:ring-offset-0 mr-2'
                             onChange={this.handleCheckboxChange}
