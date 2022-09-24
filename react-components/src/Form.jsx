@@ -51,7 +51,7 @@ class Form extends React.Component {
                         />
                         <label className='my-2'>
                             <input
-                            className='w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:outline-blue-500 focus:outline-2 outline-offset-0 mr-2'
+                            className='w-4 h-4 text-indigo-500 bg-gray-100 rounded border-gray-300 focus:ring-indigo-600 focus:ring-2 focus:ring-offset-0 mr-2'
                             onChange={this.handleCheckboxChange}
                             type='checkbox'
                             name='subscription'
