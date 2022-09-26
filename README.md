@@ -478,3 +478,6 @@ class MyComponent extends React.Component {
 
 ### Subscribe form
 ![Subscribe form](https://github.com/qcyGH/study-react/blob/main/accets/Subscribe_form.png?raw=true)
+
+### Movies search
+![Movies search](https://github.com/qcyGH/study-react/blob/main/accets/Movies.png?raw=true)
