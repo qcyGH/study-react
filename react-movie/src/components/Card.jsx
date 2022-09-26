@@ -1,7 +1,7 @@
 export function Card(props) {
     return (
-        <div className='group relative bg-zinc-200 rounded-lg shadow w-max h-max'>
-            <div className='aspect-w-1 aspect-h-1 overflow-hidden rounded-t-md rounded-b bg-gray-200 group-hover:opacity-75 lg:aspect-none'>
+        <div className='relative bg-zinc-200 rounded-lg shadow w-max h-max hover:outline outline-offset-0 outline-indigo-500'>
+            <div className='aspect-w-1 aspect-h-1 overflow-hidden rounded-t-md rounded-b bg-gray-200 lg:aspect-none'>
                 <img
                     src={props.image}
                     alt={props.name}
