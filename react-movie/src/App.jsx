@@ -1,6 +1,8 @@
 import React from 'react'
 import {List} from './components/List'
 
+// You can get your API key on this site: https://www.omdbapi.com/apikey.aspx
+const API_KEY = process.env.REACT_APP_API_KEY
 class App extends React.Component {
     constructor(props) {
         super(props)
@@ -12,8 +14,7 @@ class App extends React.Component {
     }
 
     fetchMovies = () => {
-        let apiKey = '328a7cff'
-        let url = `http://www.omdbapi.com/?apikey=${apiKey}&s=${this.state.movieName}`
+        let url = `http://www.omdbapi.com/?apikey=${API_KEY}&s=${this.state.movieName}`
 
         if (this.state.movieName !== '') {
             fetch(url)
