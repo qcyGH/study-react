@@ -9,15 +9,17 @@ class App extends React.Component {
         this.state = {
             movieList: [],
             movieName: '',
+            currentSearch: '',
             isMovieFound: true,
         }
     }
 
 
     fetchMovies = () => {
-        let url = `http://www.omdbapi.com/?apikey=${API_KEY}&s=${this.state.movieName}`
+        let {movieName, currentSearch} = this.state
+        let url = `http://www.omdbapi.com/?apikey=${API_KEY}&s=${movieName}`
 
-        if (this.state.movieName !== '') {
+        if (movieName !== '' && movieName !== currentSearch) {
             fetch(url)
                 .then((response) => {
                     return response.json()
@@ -27,6 +29,7 @@ class App extends React.Component {
                         this.setState({movieList: data.Search})
                         this.setState({isMovieFound: true})
                         this.searchNotification('searchNotification')
+                        this.setState({currentSearch: movieName})
                     } else {
                         this.setState({movieList: []})
                         this.setState({isMovieFound: false})
