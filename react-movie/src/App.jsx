@@ -46,9 +46,9 @@ class App extends React.Component {
 
     render() {
         return (
-            <section className='movie-app bg-zinc-100 py-5 px-10'>
+            <section className='movie-app bg-zinc-100 py-5 px-5 lg:px-10'>
                 <div className='flex items-center justify-center'>
-                    <label className='relative w-4/5 lg:w-1/5 h-[36px] flex items-center justify-center divide-x divide-zinc-600 bg-zinc-800 rounded-lg shadow shadow-zinc-400/50 transition-all duration-200 ease-in focus-within:w-full lg:focus-within:w-3/5'>
+                    <label className='relative w-4/5 lg:w-2/5 h-[36px] flex items-center justify-center divide-x divide-zinc-600 bg-zinc-800 rounded-lg shadow shadow-zinc-400/50 transition-all duration-200 ease-in focus-within:w-full lg:focus-within:w-3/5'>
                         <input
                             className='peer absolute left-1/2 w-full lg:w-3/5 translate-x-[-50%] text-center text-xl text-zinc-50 bg-zinc-800 rounded-lg border-none py-1 px-2 focus:border-none focus:shadow-none focus:ring-0'
                             onChange={e => this.handleChange(e)}
