@@ -1,28 +1,24 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
+
+function setDefaultValue() {
+  let userSeconds = localStorage.getItem('timerSeconds')
+  return userSeconds ? +userSeconds : 0
+}
 
 function Timer() {
-  const [seconds, setSeconds] = useState(0)
+  const [seconds, setSeconds] = useState(setDefaultValue())
   const [isTimerWorks, timerState] = useState(false)
-  let timerId
+  const timerIdRef = useRef(null)
 
   const startTimer = () => {
     timerState(true)
-    timerId = setInterval(() => {
-      let second = seconds + 1
-      setSeconds(second)
-      localStorage.setItem('timerSeconds', second)
+    timerIdRef.current = setInterval(() => {
+      setSeconds((prevCount) => prevCount + 1)
     }, 1000)
   }
 
-  useEffect(() => {
-    if (localStorage.getItem('timerSeconds')) {
-      setSeconds(parseInt(localStorage.getItem('timerSeconds')))
-    }
-  }, [])
-
-
   const stopTimer = () => {
-    clearInterval(timerId)
+    clearInterval(timerIdRef.current)
     timerState(false)
   }
 
@@ -44,6 +40,11 @@ function Timer() {
       resetTimer()
     }
   }
+
+  useEffect(() => {
+    localStorage.setItem('timerSeconds', seconds)
+
+  }, [seconds])
 
   // Time format
 
