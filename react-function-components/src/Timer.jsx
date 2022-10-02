@@ -12,13 +12,9 @@ function Timer() {
 
   const startTimer = () => {
     timerState(true)
-    timerIdRef.current = setInterval(() => {
-      setSeconds((prevCount) => prevCount + 1)
-    }, 1000)
   }
 
   const stopTimer = () => {
-    clearInterval(timerIdRef.current)
     timerState(false)
   }
 
@@ -40,6 +36,18 @@ function Timer() {
       resetTimer()
     }
   }
+
+  useEffect(() => {
+    if (isTimerWorks) {
+      timerIdRef.current = setInterval(() => {
+        setSeconds((prevCount) => prevCount + 1)
+      }, 1000)
+    }
+
+    return () => {
+      clearInterval(timerIdRef.current)
+    }
+  }, [isTimerWorks])
 
   useEffect(() => {
     localStorage.setItem('timerSeconds', seconds)
