@@ -465,6 +465,12 @@ class MyComponent extends React.Component {
 Уникайте використання рефів для будь-чого, що можна зробити декларативно.
 
 Наприклад, замість виклику методів `open()` та `close()` компоненту `Dialog`, передайте йому проп `isOpen`.
+
+#### Підйом стану
+[Посилання на офіційну документацію](https://uk.reactjs.org/docs/lifting-state-up.html)
+
+#### Композиція проти наслідування
+[Посилання на офіційну документацію](https://uk.reactjs.org/docs/composition-vs-inheritance.html)
 ## Apps
 
 ### Timer
