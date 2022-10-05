@@ -50,15 +50,21 @@ function App() {
         }
     }
 
+    const [playActive] = useSound(
+        clickSfx,
+        { volume: 0.5 }
+    )
+
 
     return (
         <section className='relative movie-app bg-zinc-100 dark:bg-zinc-900 py-5 px-5 lg:px-10'>
             <div className='flex items-center justify-center'>
-                <label className='relative w-4/5 xl:w-1/5 lg:w-2/5 h-[36px] flex items-center justify-center divide-x divide-zinc-600 bg-zinc-800 rounded-lg shadow shadow-zinc-400/50 transition-all duration-200 ease-in focus-within:w-full xl:focus-within:w-2/5 lg:focus-within:w-3/5'>
+                <label className='relative w-4/5 xl:w-1/5 lg:w-2/5 h-[36px] flex items-center justify-center divide-x divide-zinc-600 bg-zinc-800 rounded-lg shadow shadow-zinc-400/50 transition-all duration-200 ease-in focus-within:w-full xl:active:w-3/6 xl:focus-within:w-2/5 lg:focus-within:w-3/5 lg:active:w-4/6'>
                     <input
                         className='peer absolute left-1/2 w-full lg:w-3/5 translate-x-[-50%] text-center text-xl text-zinc-50 bg-zinc-800 rounded-lg border-none py-1 px-2 focus:border-none focus:shadow-none focus:ring-0'
                         onChange={e => setMovieName(e.target.value)}
                         onKeyDown={e => keyPress(e)}
+                        onClick={playActive}
                         type='text'
                         name='movieName'
                         placeholder='Search'
