@@ -1,5 +1,7 @@
 import React from 'react'
 import {List} from './components/List'
+import useSound from 'use-sound'
+import clickSfx from '.././sounds/sine-click.mp3'
 
 // You can get your API key on this site: https://www.omdbapi.com/apikey.aspx
 const API_KEY = process.env.REACT_APP_API_KEY
