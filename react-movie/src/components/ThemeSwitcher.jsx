@@ -4,7 +4,8 @@ export function ThemeSwitcher() {
     const [htmlBlock] = useState(document.documentElement)
     const [savedUserTheme] = useState(localStorage.getItem('user-theme'))
 
-    const changeTheme = (saveTheme = false) => {
+    const changeTheme = () => {
+        // отримуємо поточну тему
         let currentTheme = htmlBlock.classList.contains('light') ? 'light' : 'dark'
         let newTheme
 
@@ -13,24 +14,25 @@ export function ThemeSwitcher() {
         } else if (currentTheme === 'dark') {
             newTheme = 'light'
         }
+        // змінюємо тему
         htmlBlock.classList.remove(currentTheme)
         htmlBlock.classList.add(newTheme)
-        if (saveTheme) {
-            localStorage.setItem('user-theme', newTheme)
-        }
+
+        // зберігаємо в localStorage
+        localStorage.setItem('user-theme', newTheme)
     }
 
-    useEffect(() => {
-        setThemeClass()
-
-        return () => {
-            window.matchMedia('(prefers-color-scheme: dark)').removeEventListener('change')
-        }
-    }, [])
-
+    // встановлюємо тему:
+    // 1 випадок: якщо користувач вручну вже обирав тему
+    // 2 випадок: якщо користувач нічого вручну не змінював, то буде використана тема його пристрою
     const setThemeClass = () => {
-        let userTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+        let userTheme
+        if (window.matchMedia) {
+            userTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+        }
 
+        // якщо користувач під час перебування на сайті змінить тему пристрою, то сайт автоматично перейде
+        // на таку ж тему, що і на пристрої
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
             if (!savedUserTheme) {
                 changeTheme()
@@ -44,8 +46,15 @@ export function ThemeSwitcher() {
         }
     }
 
+    // коли сторінка завантажиться, викликаємо функцію setThemeClass()
+    useEffect(() => {
+        setThemeClass()
+
+    })
+
+
     return (
-        <button onClick={e => changeTheme(true)} className='switch-theme__button absolute right-5 lg:right-10 bg-zinc-50 py-1 px-2 rounded-lg shadow-sm active:shadow-none transition-shadow ease-in duration-200'>
+        <button onClick={changeTheme} className='switch-theme__button absolute right-5 lg:right-10 bg-zinc-50 py-1 px-2 rounded-lg shadow-sm active:shadow-none transition-shadow ease-in duration-200'>
             Change theme
         </button>
     )

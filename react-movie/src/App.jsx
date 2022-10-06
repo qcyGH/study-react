@@ -57,7 +57,7 @@ function App() {
 
 
     return (
-        <section className='relative movie-app bg-zinc-100 dark:bg-zinc-900 py-5 px-5 lg:px-10'>
+        <section className='relative movie-app bg-zinc-100 dark:bg-zinc-900 transition-colors duration-300 py-5 px-5 lg:px-10'>
             <div className='flex items-center justify-center'>
                 <label className='relative w-4/5 xl:w-1/5 lg:w-2/5 h-[36px] flex items-center justify-center divide-x divide-zinc-600 bg-zinc-800 rounded-lg shadow shadow-zinc-400/50 transition-all duration-200 ease-in focus-within:w-full xl:active:w-3/6 xl:focus-within:w-2/5 lg:focus-within:w-3/5 lg:active:w-4/6'>
                     <input
