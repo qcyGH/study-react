@@ -59,7 +59,7 @@ export function ThemeSwitcher() {
 
 
     return (
-        <span className='absolute right-5 lg:right-10'>
+        <span className='absolute right-5 top-[50%] translate-y-[-50%] lg:right-10'>
             <AnimatePresence exitBeforeEnter initial={ false }>
                 <motion.div
                     style={{ display: 'inline-block'}}
@@ -72,12 +72,13 @@ export function ThemeSwitcher() {
                     <IconButton
                         aria-label="Change theme"
                         onClick={changeTheme}
+                        p='8'
                         icon={
                         Theme === 'light'
                             ? <SunIcon w={18} h={18}/>
                             : <MoonIcon w={18} h={18}/>
                         }
-                        className='bg-transparent py-1 px-2 text-zinc-900 dark:text-zinc-100'>
+                        className='bg-transparent text-zinc-900 dark:text-zinc-100'>
                     </IconButton>
                 </motion.div>
             </AnimatePresence>
