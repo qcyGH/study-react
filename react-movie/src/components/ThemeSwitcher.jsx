@@ -1,8 +1,11 @@
 import React, {useState, useEffect} from 'react'
+import { IconButton } from '@chakra-ui/react'
+import { SunIcon, MoonIcon} from '@chakra-ui/icons'
 
 export function ThemeSwitcher() {
     const [htmlBlock] = useState(document.documentElement)
     const [savedUserTheme] = useState(localStorage.getItem('user-theme'))
+    const [Theme, setTheme] = useState(localStorage.getItem('user-theme'))
 
     const changeTheme = () => {
         // отримуємо поточну тему
@@ -17,6 +20,7 @@ export function ThemeSwitcher() {
         // змінюємо тему
         htmlBlock.classList.remove(currentTheme)
         htmlBlock.classList.add(newTheme)
+        setTheme(newTheme)
 
         // зберігаємо в localStorage
         localStorage.setItem('user-theme', newTheme)
@@ -54,8 +58,17 @@ export function ThemeSwitcher() {
 
 
     return (
-        <button onClick={changeTheme} className='switch-theme__button absolute right-5 lg:right-10 bg-zinc-50 py-1 px-2 rounded-lg shadow-sm active:shadow-none transition-shadow ease-in duration-200'>
-            Change theme
-        </button>
+        <span className='absolute right-5 lg:right-10'>
+            <IconButton
+                aria-label="Change theme"
+                onClick={changeTheme}
+                icon={
+                localStorage.getItem('user-theme') === 'light'
+                    ? <SunIcon w={18} h={18}/>
+                    : <MoonIcon w={18} h={18}/>
+                }
+                className='bg-transparent py-1 px-2 rounded-lg shadow-sm active:shadow-none transition-shadow ease-in duration-200'>
+            </IconButton>
+        </span>
     )
 }
