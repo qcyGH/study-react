@@ -59,9 +59,9 @@ function App() {
     return (
         <section className='relative movie-app bg-zinc-100 dark:bg-zinc-900 transition-colors duration-300 py-5 px-5 lg:px-10'>
             <div className='flex items-center justify-center'>
-                <label className='relative w-4/5 xl:w-1/5 lg:w-2/5 h-[36px] flex items-center justify-center divide-x divide-zinc-600 bg-zinc-800 rounded-lg shadow shadow-zinc-400/50 transition-all duration-200 ease-in focus-within:w-full xl:active:w-3/6 xl:focus-within:w-2/5 lg:focus-within:w-3/5 lg:active:w-4/6'>
+                <label className='relative w-4/5 xl:w-1/5 lg:w-2/5 h-[36px] flex items-center justify-center divide-x divide-zinc-600 bg-zinc-800 dark:bg-zinc-200 rounded-lg shadow shadow-zinc-400/50 transition-all duration-200 ease-in focus-within:w-full xl:active:w-3/6 xl:focus-within:w-2/5 lg:focus-within:w-3/5 lg:active:w-4/6'>
                     <input
-                        className='peer absolute left-1/2 w-full lg:w-3/5 translate-x-[-50%] text-center text-xl text-zinc-50 bg-zinc-800 rounded-lg border-none py-1 px-2 focus:border-none focus:shadow-none focus:ring-0'
+                        className='peer absolute left-1/2 w-full translate-x-[-50%] text-center text-xl text-zinc-50 bg-transparent dark:text-zinc-800 rounded-lg border-none py-1 px-2 focus:border-none focus:shadow-none focus:ring-0'
                         onChange={e => setMovieName(e.target.value)}
                         onKeyDown={e => keyPress(e)}
                         onClick={playActive}
@@ -72,7 +72,7 @@ function App() {
                     />
                     <button
                         onClick={fetchMovies}
-                        className='absolute right-0 invisible opacity-0 peer-focus-visible:visible peer-focus-visible:opacity-100 duration-200 ease text-slate-200 py-1 px-3'
+                        className='absolute right-0 invisible opacity-0 peer-focus-visible:visible peer-focus-visible:opacity-100 duration-200 ease text-slate-200 dark:text-slate-800 py-1 px-3'
                     >
                         <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' strokeWidth={1.5} stroke='currentColor' className='w-6 h-6'>
                             <path strokeLinecap='round' strokeLinejoin='round' d='M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z' />
@@ -81,7 +81,7 @@ function App() {
                 </label>
             </div>
             { !isMovieFound &&
-                <div className='text-2xl text-zinc-600 text-center mt-10'>No movies for your request 😒</div>
+                <div className='text-2xl text-zinc-600 dark:text-zinc-400 text-center mt-10'>No movies for your request 😒</div>
             }
             <List cards={movieList}></List>
 
