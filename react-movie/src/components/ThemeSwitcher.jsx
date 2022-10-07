@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 import { IconButton } from '@chakra-ui/react'
 import { SunIcon, MoonIcon} from '@chakra-ui/icons'
 
@@ -59,16 +60,27 @@ export function ThemeSwitcher() {
 
     return (
         <span className='absolute right-5 lg:right-10'>
-            <IconButton
-                aria-label="Change theme"
-                onClick={changeTheme}
-                icon={
-                localStorage.getItem('user-theme') === 'light'
-                    ? <SunIcon w={18} h={18}/>
-                    : <MoonIcon w={18} h={18}/>
-                }
-                className='bg-transparent py-1 px-2 rounded-lg shadow-sm active:shadow-none transition-shadow ease-in duration-200'>
-            </IconButton>
+            <AnimatePresence exitBeforeEnter initial={ false }>
+                <motion.div
+                    style={{ display: 'inline-block'}}
+                    key={Theme}
+                    initial={{ y: -20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: 20, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                >
+                    <IconButton
+                        aria-label="Change theme"
+                        onClick={changeTheme}
+                        icon={
+                        Theme === 'light'
+                            ? <SunIcon w={18} h={18}/>
+                            : <MoonIcon w={18} h={18}/>
+                        }
+                        className='bg-transparent py-1 px-2 text-zinc-900 dark:text-zinc-100'>
+                    </IconButton>
+                </motion.div>
+            </AnimatePresence>
         </span>
     )
 }
