@@ -10,11 +10,15 @@ function App() {
     const [movieName, setMovieName] = useState('')
     const [currentSearch, setCurrentSearch] = useState('')
     const [isMovieFound, setMovieFound] = useState(true)
+    const [isLoading, setLoading] = useState(false)
 
     const fetchMovies = () => {
         let url = `http://www.omdbapi.com/?apikey=${API_KEY}&s=${movieName}`
 
         if (movieName !== '' && movieName !== currentSearch) {
+            setLoading(true)
+            setMovieList([])
+
             fetch(url)
                 .then((response) => {
                     return response.json()
@@ -26,10 +30,11 @@ function App() {
                         searchNotification('searchNotification')
                         setCurrentSearch(movieName)
                     } else {
-                        setMovieList([])
                         setMovieFound(false)
                     }
                 })
+
+            setLoading(false)
         }
     }
 
@@ -83,7 +88,7 @@ function App() {
             { !isMovieFound &&
                 <div className='text-2xl text-zinc-600 dark:text-zinc-400 text-center mt-10'>No movies for your request 😒</div>
             }
-            <List cards={movieList}></List>
+            <List cards={movieList} skeleton={isLoading}></List>
 
             <div id='searchNotification' className='sticky left-0 bottom-5 text-left opacity-0 transition-opacity ease duration-500'>
                 {

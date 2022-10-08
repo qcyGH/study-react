@@ -7,9 +7,9 @@ import {Footer} from './components/Footer'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.Fragment>
+  <React.StrictMode>
     <Header />
     <App />
     <Footer />
-  </React.Fragment>
+  </React.StrictMode>
 );
