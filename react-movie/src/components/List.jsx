@@ -9,7 +9,9 @@ export function List(props) {
                         <Card id={card.imdbID} key={card.imdbID} name={card.Title} image={card.Poster} isLoading={props.skeleton}/>
                     ))
                 }
-                <Preloader isLoading={props.skeleton}/>
+                {
+                    props.skeleton && <Preloader isLoading={props.skeleton}/>
+                }
             </div>
     )
 }
