@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { IconButton } from '@chakra-ui/react'
 import { SunIcon, MoonIcon} from '@chakra-ui/icons'
+import useSound from 'use-sound'
+import clickSfx from '.././sounds/sine-click.mp3'
 
 export function ThemeSwitcher() {
     const [htmlBlock] = useState(document.documentElement)
@@ -9,6 +11,9 @@ export function ThemeSwitcher() {
     const [Theme, setTheme] = useState(localStorage.getItem('user-theme'))
 
     const changeTheme = () => {
+        // play sound click
+        playActive()
+
         // отримуємо поточну тему
         let currentTheme = htmlBlock.classList.contains('light') ? 'light' : 'dark'
         let newTheme
@@ -57,6 +62,10 @@ export function ThemeSwitcher() {
 
     })
 
+    const [playActive] = useSound(
+        clickSfx,
+        { volume: 0.5 }
+    )
 
     return (
         <span className='absolute right-5 top-[50%] translate-y-[-50%] lg:right-10'>
