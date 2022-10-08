@@ -487,3 +487,4 @@ class MyComponent extends React.Component {
 
 ### Movies search
 ![Movies search](https://github.com/qcyGH/study-react/blob/main/accets/Movies.png?raw=true)
+![Movies search dark](https://github.com/qcyGH/study-react/blob/main/accets/Movies_dark.png?raw=true)
