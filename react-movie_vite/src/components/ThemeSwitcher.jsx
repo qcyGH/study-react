@@ -1,14 +1,14 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { IconButton } from '@chakra-ui/react'
-import { SunIcon, MoonIcon} from '@chakra-ui/icons'
+import { SunIcon, MoonIcon } from '@chakra-ui/icons'
 import useSound from 'use-sound'
 import clickSfx from '.././sounds/sine-click.mp3'
 
 export function ThemeSwitcher() {
-    const htmlBlock = document.documentElement
+    const [htmlBlock, setHtmlBlock] = useState(document.documentElement)
     const [savedUserTheme] = useState(localStorage.getItem('user-theme'))
-    const [Theme, setTheme] = useState(localStorage.getItem('user-theme'))
+    const [darkTheme, setDarkTheme] = useState(() => htmlBlock.classList.contains('light') ? false : true)
 
     const changeTheme = () => {
         // play sound click
@@ -17,17 +17,14 @@ export function ThemeSwitcher() {
         // отримуємо поточну тему
         let currentTheme = htmlBlock.classList.contains('light') ? 'light' : 'dark'
         let newTheme
-        console.log(currentTheme)
         if (currentTheme === 'light') {
             newTheme = 'dark'
         } else if (currentTheme === 'dark') {
             newTheme = 'light'
         }
         // змінюємо тему
-        console.log(htmlBlock)
-        document.documentElement.classList.remove(currentTheme)
+        htmlBlock.classList.remove(currentTheme)
         htmlBlock.classList.add(newTheme)
-        setTheme(newTheme)
 
         // зберігаємо в localStorage
         localStorage.setItem('user-theme', newTheme)
@@ -60,8 +57,12 @@ export function ThemeSwitcher() {
     // коли сторінка завантажиться, викликаємо функцію setThemeClass()
     useEffect(() => {
         setThemeClass()
-
     })
+
+    useEffect(() => {
+        changeTheme()
+
+    }, [darkTheme])
 
     const [playActive] = useSound(
         clickSfx,
@@ -73,7 +74,7 @@ export function ThemeSwitcher() {
             <AnimatePresence exitBeforeEnter initial={ false }>
                 <motion.div
                     style={{ display: 'inline-block'}}
-                    key={Theme}
+                    key={darkTheme}
                     initial={{ y: -20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: 20, opacity: 0 }}
@@ -81,10 +82,10 @@ export function ThemeSwitcher() {
                 >
                     <IconButton
                         aria-label="Change theme"
-                        onClick={changeTheme}
+                        onClick={() => setDarkTheme(!darkTheme)}
                         p='8'
                         icon={
-                        Theme === 'light'
+                        darkTheme === false
                             ? <SunIcon w={18} h={18}/>
                             : <MoonIcon w={18} h={18}/>
                         }
