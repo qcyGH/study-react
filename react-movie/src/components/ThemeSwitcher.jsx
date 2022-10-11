@@ -5,8 +5,8 @@ import { SunIcon, MoonIcon} from '@chakra-ui/icons'
 import useSound from 'use-sound'
 import clickSfx from '.././sounds/sine-click.mp3'
 
+const htmlBlock = document.documentElement
 export function ThemeSwitcher() {
-    const [htmlBlock] = useState(document.documentElement)
     const [savedUserTheme] = useState(localStorage.getItem('user-theme'))
     const [Theme, setTheme] = useState(localStorage.getItem('user-theme'))
 
@@ -17,7 +17,7 @@ export function ThemeSwitcher() {
         // отримуємо поточну тему
         let currentTheme = htmlBlock.classList.contains('light') ? 'light' : 'dark'
         let newTheme
-
+        console.log(currentTheme)
         if (currentTheme === 'light') {
             newTheme = 'dark'
         } else if (currentTheme === 'dark') {
