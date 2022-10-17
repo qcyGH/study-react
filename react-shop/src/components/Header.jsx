@@ -1,4 +1,5 @@
-import { ThemeSwitcher } from "./ThemeSwitcher"
+import { ThemeSwitcher } from './ThemeSwitcher'
+import { Cart } from './Cart'
 
 export function Header(props) {
     return (
@@ -6,6 +7,7 @@ export function Header(props) {
             <span className='text-zinc-700 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-zinc-100 ease-in duration-150'>
                 React Shop
             </span>
+            <Cart />
             <ThemeSwitcher />
         </header>
     )
