@@ -19,7 +19,7 @@ export function Shop() {
             .then(response => response.json())
             .then(data => {
                 data.status === 200 && setItems(data.data.featured.entries)
-                console.log(data.data.featured.entries)
+                //console.log(data.data.featured.entries)
                 setLoading(false)
             })
     }, [])
