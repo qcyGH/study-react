@@ -1,8 +1,9 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { Icon } from '@chakra-ui/react'
+import { OrderContext } from '../hooks/OrderContext'
 
 export function Cart(props) {
-    const { count } = props
+    const { orderList } = useContext(OrderContext)
 
     const CartIcon = (props) => (
         <Icon viewBox='0 0 18 17' {...props}>
@@ -13,9 +14,13 @@ export function Cart(props) {
     )
 
     return (
-        <div className='flex items-center absolute right-16 top-[50%] translate-y-[-50%] lg:right-20 text-zinc-900 dark:text-zinc-100'>
+        <div className='flex items-center absolute p-2 right-16 top-[50%] translate-y-[-50%] lg:right-20 text-zinc-900 dark:text-zinc-100'>
             <CartIcon w={18} h={17} />
-            {count !== 0 && <span>{count}</span>}
+            {
+                orderList.length > 0 && <span className='inline-block text-xs text-center align-middle font-medium rounded-full bg-violet-800 w-4 h-4 absolute top-0 right-[-2px]'>
+                    { orderList.length }
+                </span>
+            }
         </div>
     )
 }
