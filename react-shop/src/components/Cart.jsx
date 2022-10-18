@@ -1,9 +1,11 @@
-import React, {useContext} from 'react'
-import { Icon } from '@chakra-ui/react'
+import React, { useState, useContext } from 'react'
+import { Icon, IconButton } from '@chakra-ui/react'
 import { OrderContext } from '../hooks/OrderContext'
+import { CartModal } from './CartModal'
 
 export function Cart(props) {
     const { orderList } = useContext(OrderContext)
+    const [showModal, setShowModal] = useState(false)
 
     const CartIcon = (props) => (
         <Icon viewBox='0 0 18 17' {...props}>
@@ -14,12 +16,25 @@ export function Cart(props) {
     )
 
     return (
-        <div className='flex items-center absolute p-2 right-16 top-[50%] translate-y-[-50%] lg:right-20 text-zinc-900 dark:text-zinc-100'>
-            <CartIcon w={18} h={17} />
+        <div>
+            <span className='flex items-center absolute p-2 right-16 top-[50%] translate-y-[-50%] lg:right-20'>
+                <IconButton
+                aria-label='cart'
+                onClick={() => setShowModal(!showModal)}
+                className='text-zinc-900 dark:text-zinc-100'
+                icon={
+                    <CartIcon w={18} h={17} />
+                }
+                >
+                </IconButton>
+                {
+                    orderList.length > 0 && <span className='text-zinc-200 inline-block text-xs text-center align-middle font-medium rounded-full bg-violet-800 w-4 h-4 absolute top-0 right-[-2px]'>
+                        { orderList.length }
+                    </span>
+                }
+            </span>
             {
-                orderList.length > 0 && <span className='inline-block text-xs text-center align-middle font-medium rounded-full bg-violet-800 w-4 h-4 absolute top-0 right-[-2px]'>
-                    { orderList.length }
-                </span>
+                showModal && <CartModal items={orderList} />
             }
         </div>
     )
