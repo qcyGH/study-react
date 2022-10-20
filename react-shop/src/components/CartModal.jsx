@@ -7,23 +7,21 @@ export function CartModal(props) {
 
     return (
         <div className='absolute bottom-[-1rem] right-0 translate-y-[100%] w-max
-                        bg-zinc-300/90 dark:bg-zinc-800/90 p-2 rounded-md backdrop-blur-xl
+                        bg-zinc-300/90 dark:bg-zinc-800/90 p-2 rounded-md backdrop-blur-xl backdrop-saturate-150
+                        shadow-lg shadow-zinc-400/50 dark:shadow-zinc-900/50
                         text-zinc-900 dark:text-zinc-200
+                        transition-color duration-300
         '>
             <div className='grid auto-rows-max grid-cols-4 gap-x-4 gap-y-2.5 py-2 px-4'>
-                <div>Name</div>
-                <div>Description</div>
-                <div>Price</div>
-                <div>Quantity</div>
+                <div className='pl-1'>Name</div>
+                <div className='pl-1'>Description</div>
+                <div className='pl-1'>Price</div>
+                <div className='pl-1'>Quantity</div>
                 {
                     items.map(item => (
                         <CartItem
-                        name={item.name}
-                        id={item.id}
+                        item={item}
                         key={item.id}
-                        description={item.description}
-                        finalPrice={item.finalPrice}
-                        quantity={item.quantity}
                         />
                     ))
                 }

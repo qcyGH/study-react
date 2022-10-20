@@ -35,8 +35,26 @@ export function Context(props) {
         setOrderList(orderList.filter((item) => item.id !== id))
     }
 
+    const changeQuantity = (item, count) => {
+        const itemIndex = orderList.findIndex(orderItem => orderItem.id === item.id)
+
+
+        const newOrder = orderList.map((orderItem, index) => {
+            if (index === itemIndex) {
+                return {
+                    ...orderItem,
+                    quantity: count
+                }
+            } else {
+                return orderItem
+            }
+        })
+
+        setOrderList(newOrder)
+    }
+
     return (
-        <OrderContext.Provider value={{orderList, addItem, removeItem}}>
+        <OrderContext.Provider value={{orderList, addItem, removeItem, changeQuantity}}>
             {props.children}
         </OrderContext.Provider>
     )
