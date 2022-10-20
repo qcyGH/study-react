@@ -6,7 +6,7 @@ export function CartModal(props) {
     const { items = [] } = props
 
     return (
-        <div>
+        <div className='absolute'>
             {
                 items.map(item => (
                     <CartItem

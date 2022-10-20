@@ -7,8 +7,14 @@ export function Header(props) {
             <span className='text-zinc-700 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-zinc-100 ease-in duration-150'>
                 React Shop
             </span>
-            <Cart />
-            <ThemeSwitcher />
+            <ul className='flex absolute top-[50%] right-5 lg:right-10 translate-y-[-50%]'>
+                <li className='mr-2'>
+                    <Cart />
+                </li>
+                <li>
+                    <ThemeSwitcher />
+                </li>
+            </ul>
         </header>
     )
 }

@@ -16,8 +16,8 @@ export function Cart(props) {
     )
 
     return (
-        <div>
-            <span className='flex items-center absolute p-2 right-16 top-[50%] translate-y-[-50%] lg:right-20'>
+        <div className='relative'>
+            <span className='flex items-center p-2'>
                 <IconButton
                 aria-label='cart'
                 onClick={() => setShowModal(!showModal)}

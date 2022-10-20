@@ -70,7 +70,7 @@ export function ThemeSwitcher() {
     )
 
     return (
-        <span className='absolute right-5 top-[50%] translate-y-[-50%] lg:right-10'>
+        <span>
             <AnimatePresence exitBeforeEnter initial={ false }>
                 <motion.div
                     style={{ display: 'inline-block'}}
