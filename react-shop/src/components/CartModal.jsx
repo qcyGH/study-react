@@ -12,20 +12,24 @@ export function CartModal(props) {
                         text-zinc-900 dark:text-zinc-200
                         transition-color duration-300
         '>
-            <div className='grid auto-rows-max grid-cols-4 gap-x-4 gap-y-2.5 py-2 px-4'>
-                <div className='pl-1'>Name</div>
-                <div className='pl-1'>Description</div>
-                <div className='pl-1'>Price</div>
-                <div className='pl-1'>Quantity</div>
-                {
-                    items.map(item => (
-                        <CartItem
-                        item={item}
-                        key={item.id}
-                        />
-                    ))
-                }
-            </div>
+            {
+                items.length > 0
+                ? <div className='grid auto-rows-max grid-cols-4 gap-x-4 gap-y-2.5 py-2 px-4'>
+                    <div className='pl-1'>Name</div>
+                    <div className='pl-1'>Description</div>
+                    <div className='pl-1'>Price</div>
+                    <div className='pl-1'>Quantity</div>
+                    {
+                        items.map(item => (
+                            <CartItem
+                            item={item}
+                            key={item.id}
+                            />
+                        ))
+                    }
+                </div>
+                : <span>Cart is empty</span>
+            }
         </div>
     )
 }
