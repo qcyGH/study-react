@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useEffect, useRef, useContext } from 'react'
 import { Icon, IconButton } from '@chakra-ui/react'
 import { OrderContext } from '../hooks/OrderContext'
 import { CartModal } from './CartModal'
@@ -6,6 +6,7 @@ import { CartModal } from './CartModal'
 export function Cart(props) {
     const { orderList } = useContext(OrderContext)
     const [showModal, setShowModal] = useState(false)
+    const cartRef = useRef(null)
 
     const CartIcon = (props) => (
         <Icon viewBox='0 0 18 17' {...props}>
@@ -15,12 +16,22 @@ export function Cart(props) {
         </Icon>
     )
 
+    const closeModal = (e) => {
+        console.log(e.composedPath().includes(cartRef.current))
+        if (!e.composedPath().includes(cartRef.current)) {
+            console.log(e.target)
+            console.log('Close modal')
+            setShowModal(false)
+        }
+
+    }
+
     return (
         <div className='relative'>
-            <span className='flex items-center p-2'>
+            <span className='flex items-center p-2' ref={cartRef}>
                 <IconButton
                 aria-label='cart'
-                onClick={() => setShowModal(!showModal)}
+                onClick={() => setShowModal((prevState) => !prevState)}
                 className='text-zinc-900 dark:text-zinc-100'
                 icon={
                     <CartIcon w={18} h={17} />
@@ -33,9 +44,7 @@ export function Cart(props) {
                     </span>
                 }
             </span>
-            {
-                showModal && <CartModal items={orderList} />
-            }
+            <CartModal show={showModal} closeModal={closeModal} items={orderList} />
         </div>
     )
 }
