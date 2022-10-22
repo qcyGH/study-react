@@ -16,14 +16,19 @@ export function Cart(props) {
         </Icon>
     )
 
-    const closeModal = (e) => {
+    const closeModalOutside = (e) => {
         console.log(e.composedPath().includes(cartRef.current))
         if (!e.composedPath().includes(cartRef.current)) {
             console.log(e.target)
             console.log('Close modal')
             setShowModal(false)
         }
+    }
 
+    const closeModal = () => {
+        if (showModal) {
+            setShowModal(false)
+        }
     }
 
     return (
@@ -44,7 +49,7 @@ export function Cart(props) {
                     </span>
                 }
             </span>
-            <CartModal show={showModal} closeModal={closeModal} items={orderList} />
+            <CartModal show={showModal} closeModal={closeModal} closeModalOutside={closeModalOutside} items={orderList} />
         </div>
     )
 }
