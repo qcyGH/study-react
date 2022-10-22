@@ -51,11 +51,12 @@ export function CartModal(props) {
             {
                 items.length > 0
                 ? <div className='pb-2'>
-                    <div className='grid auto-rows-max grid-cols-4 gap-x-4 gap-y-2.5 py-4 px-4'>
+                    <div className='grid auto-rows-max grid-cols-5 gap-x-4 gap-y-2.5 py-4 px-4'>
                         <div className='pl-1'>Name</div>
                         <div className='pl-1'>Description</div>
                         <div className='pl-1'>Price</div>
                         <div className='pl-1'>Quantity</div>
+                        <div></div>
                         {
                             items.map(item => (
                                 <CartItem

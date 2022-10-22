@@ -57,6 +57,10 @@ export function CartItem(props) {
                     </IconButton>
                 </div>
             </div>
+            <button onClick={() => removeItem(id)}
+                className='text-zinc-200 bg-rose-800 hover:bg-rose-900 rounded-md'>
+                Delete
+            </button>
         </>
     )
 }
