@@ -8,10 +8,10 @@ import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Context>
-      <Header />
-      <App />
-    </Context>
-    <Footer />
+      <Context>
+        <Header />
+        <App />
+      </Context>
+      <Footer />
   </React.StrictMode>
 )
