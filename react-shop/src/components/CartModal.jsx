@@ -51,10 +51,10 @@ export function CartModal(props) {
                 </div>
                 : <span>Cart is empty</span>
             }
-            <span className='absolute top-2 right-2 flex'>
+            <span className='absolute top-1 right-1 flex'>
                 <IconButton
                     aria-label='close modal'
-                    style={{padding: 5}}
+                    style={{padding: 10}}
                     onClick={(e) => closeModal(e)}
                     icon={<CloseIcon w={10} h={10}/>}
                 >
