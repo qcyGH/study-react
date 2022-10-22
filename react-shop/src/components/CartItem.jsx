@@ -34,7 +34,7 @@ export function CartItem(props) {
                 {description}
             </div>
             <div className='pl-2 pr-4 py-1 bg-zinc-200/30 dark:bg-zinc-900/30 hover:bg-zinc-200/90 dark:hover:bg-zinc-900/90 rounded-md transition-color duration-100'>
-                {finalPrice}
+                {finalPrice} * {quantity} = {finalPrice * quantity}
             </div>
             <div className='relative'>
                 <input onChange={(e) => setCount(e.target.value)}
