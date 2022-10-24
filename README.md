@@ -3,16 +3,16 @@
  
 ## List of contents
 
-- [Apps](https://github.com/qcyGH/study-react/edit/main/README.md#apps)
-- [Cheatscheet](https://github.com/qcyGH/study-react/edit/main/README.md#cheatscheet)
-  - [Base](https://github.com/qcyGH/study-react/edit/main/README.md#base)
-    - [Render](https://github.com/qcyGH/study-react/edit/main/README.md#render)
-    - [Components and props](https://github.com/qcyGH/study-react/edit/main/README.md#components-and-props)
-    - [State and lifecycle](https://github.com/qcyGH/study-react/edit/main/README.md#state-and-lifecycle)
-    - [Event processing](https://github.com/qcyGH/study-react/edit/main/README.md#event-processing)
-    - [Conditional rendering](https://github.com/qcyGH/study-react/edit/main/README.md#conditional-rendering)
-    - [Lists and keys](https://github.com/qcyGH/study-react/edit/main/README.md#lists-and-keys)
-    - [Forms](https://github.com/qcyGH/study-react/edit/main/README.md#forms)
+- [Apps](https://github.com/qcyGH/study-react#apps)
+- [Cheatscheet](https://github.com/qcyGH/study-react#cheatscheet)
+  - [Base](https://github.com/qcyGH/study-react#base)
+    - [Render](https://github.com/qcyGH/study-react#render)
+    - [Components and props](https://github.com/qcyGH/study-react#components-and-props)
+    - [State and lifecycle](https://github.com/qcyGH/study-react#state-and-lifecycle)
+    - [Event processing](https://github.com/qcyGH/study-react#event-processing)
+    - [Conditional rendering](https://github.com/qcyGH/study-react#conditional-rendering)
+    - [Lists and keys](https://github.com/qcyGH/study-react#lists-and-keys)
+    - [Forms](https://github.com/qcyGH/study-reactd#forms)
   - I lost the point of writing these cheat sheets, because all the actual information are in the official documentation. So, I will not continue to write exactly these cheat sheets...
  
 
