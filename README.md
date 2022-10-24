@@ -1,6 +1,42 @@
 # react-study
  In this repository I show what I am learning (learned)
  
+## List of contents
+
+- [Apps](https://github.com/qcyGH/study-react/edit/main/README.md#apps)
+- [Cheatscheet](https://github.com/qcyGH/study-react/edit/main/README.md#cheatscheet)
+  - [Base](https://github.com/qcyGH/study-react/edit/main/README.md#base)
+    - [Render](https://github.com/qcyGH/study-react/edit/main/README.md#render)
+    - [Components and props](https://github.com/qcyGH/study-react/edit/main/README.md#components-and-props)
+    - [State and lifecycle](https://github.com/qcyGH/study-react/edit/main/README.md#state-and-lifecycle)
+    - [Event processing](https://github.com/qcyGH/study-react/edit/main/README.md#event-processing)
+    - [Conditional rendering](https://github.com/qcyGH/study-react/edit/main/README.md#conditional-rendering)
+    - [Lists and keys](https://github.com/qcyGH/study-react/edit/main/README.md#lists-and-keys)
+    - [Forms](https://github.com/qcyGH/study-react/edit/main/README.md#forms)
+    - I lost the point of writing these cheat sheets, because all the actual information are in the official documentation. So, I will not continue to write exactly these cheat sheets...
+ 
+
+## Apps
+
+### Timer
+![Timer](https://github.com/qcyGH/study-react/blob/main/accets/Timer.png?raw=true)
+
+### List
+![List](https://github.com/qcyGH/study-react/blob/main/accets/List.png?raw=true)
+
+### TODO List
+![TODO List](https://github.com/qcyGH/study-react/blob/main/accets/TODO_list.png?raw=true)
+
+### Subscribe form
+![Subscribe form](https://github.com/qcyGH/study-react/blob/main/accets/Subscribe_form.png?raw=true)
+
+### Movies search
+![Movies search](https://github.com/qcyGH/study-react/blob/main/accets/Movies.png?raw=true)
+![Movies search dark](https://github.com/qcyGH/study-react/blob/main/accets/Movies_dark.png?raw=true)
+
+### Shop
+![Shop](https://github.com/qcyGH/study-react/blob/main/accets/Shop.png?raw=true)
+
 ## Cheatscheet
 
 ### Base
@@ -471,20 +507,3 @@ class MyComponent extends React.Component {
 
 #### Композиція проти наслідування
 [Посилання на офіційну документацію](https://uk.reactjs.org/docs/composition-vs-inheritance.html)
-## Apps
-
-### Timer
-![Timer](https://github.com/qcyGH/study-react/blob/main/accets/Timer.png?raw=true)
-
-### List
-![List](https://github.com/qcyGH/study-react/blob/main/accets/List.png?raw=true)
-
-### TODO List
-![TODO List](https://github.com/qcyGH/study-react/blob/main/accets/TODO_list.png?raw=true)
-
-### Subscribe form
-![Subscribe form](https://github.com/qcyGH/study-react/blob/main/accets/Subscribe_form.png?raw=true)
-
-### Movies search
-![Movies search](https://github.com/qcyGH/study-react/blob/main/accets/Movies.png?raw=true)
-![Movies search dark](https://github.com/qcyGH/study-react/blob/main/accets/Movies_dark.png?raw=true)
