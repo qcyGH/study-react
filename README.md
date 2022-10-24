@@ -13,7 +13,7 @@
     - [Conditional rendering](https://github.com/qcyGH/study-react/edit/main/README.md#conditional-rendering)
     - [Lists and keys](https://github.com/qcyGH/study-react/edit/main/README.md#lists-and-keys)
     - [Forms](https://github.com/qcyGH/study-react/edit/main/README.md#forms)
-    - I lost the point of writing these cheat sheets, because all the actual information are in the official documentation. So, I will not continue to write exactly these cheat sheets...
+  - I lost the point of writing these cheat sheets, because all the actual information are in the official documentation. So, I will not continue to write exactly these cheat sheets...
  
 
 ## Apps
