@@ -1,6 +1,42 @@
 # react-study
  In this repository I show what I am learning (learned)
  
+## List of contents
+
+- [Apps](https://github.com/qcyGH/study-react#apps)
+- [Cheatscheet](https://github.com/qcyGH/study-react#cheatscheet)
+  - [Base](https://github.com/qcyGH/study-react#base)
+    - [Render](https://github.com/qcyGH/study-react#render)
+    - [Components and props](https://github.com/qcyGH/study-react#components-and-props)
+    - [State and lifecycle](https://github.com/qcyGH/study-react#state-and-lifecycle)
+    - [Event processing](https://github.com/qcyGH/study-react#event-processing)
+    - [Conditional rendering](https://github.com/qcyGH/study-react#conditional-rendering)
+    - [Lists and keys](https://github.com/qcyGH/study-react#lists-and-keys)
+    - [Forms](https://github.com/qcyGH/study-reactd#forms)
+  - I lost the point of writing these cheat sheets, because all the actual information are in the official documentation. So, I will not continue to write exactly these cheat sheets...
+ 
+
+## Apps
+
+### Timer
+![Timer](https://github.com/qcyGH/study-react/blob/main/accets/Timer.png?raw=true)
+
+### List
+![List](https://github.com/qcyGH/study-react/blob/main/accets/List.png?raw=true)
+
+### TODO List
+![TODO List](https://github.com/qcyGH/study-react/blob/main/accets/TODO_list.png?raw=true)
+
+### Subscribe form
+![Subscribe form](https://github.com/qcyGH/study-react/blob/main/accets/Subscribe_form.png?raw=true)
+
+### Movies search
+![Movies search](https://github.com/qcyGH/study-react/blob/main/accets/Movies.png?raw=true)
+![Movies search dark](https://github.com/qcyGH/study-react/blob/main/accets/Movies_dark.png?raw=true)
+
+### Shop
+![Shop](https://github.com/qcyGH/study-react/blob/main/accets/Shop.png?raw=true)
+
 ## Cheatscheet
 
 ### Base
@@ -471,20 +507,3 @@ class MyComponent extends React.Component {
 
 #### Композиція проти наслідування
 [Посилання на офіційну документацію](https://uk.reactjs.org/docs/composition-vs-inheritance.html)
-## Apps
-
-### Timer
-![Timer](https://github.com/qcyGH/study-react/blob/main/accets/Timer.png?raw=true)
-
-### List
-![List](https://github.com/qcyGH/study-react/blob/main/accets/List.png?raw=true)
-
-### TODO List
-![TODO List](https://github.com/qcyGH/study-react/blob/main/accets/TODO_list.png?raw=true)
-
-### Subscribe form
-![Subscribe form](https://github.com/qcyGH/study-react/blob/main/accets/Subscribe_form.png?raw=true)
-
-### Movies search
-![Movies search](https://github.com/qcyGH/study-react/blob/main/accets/Movies.png?raw=true)
-![Movies search dark](https://github.com/qcyGH/study-react/blob/main/accets/Movies_dark.png?raw=true)
