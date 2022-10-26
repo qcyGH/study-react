@@ -2,8 +2,8 @@ import React, {useState, useEffect, useContext} from 'react'
 import {API_KEY, API_URL} from '../config'
 import { OrderContext } from '../hooks/OrderContext'
 
-import {Preloader} from './Preloader'
-import {List} from './List'
+import {Preloader} from '../components/Preloader'
+import {List} from '../components/List'
 
 export function Shop() {
     const [items, setItems] = useState([])

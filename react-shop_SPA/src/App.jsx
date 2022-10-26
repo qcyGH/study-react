@@ -1,19 +1,18 @@
 import React from 'react'
-import {
-    Route,
-    BrowserRouter as Router,
-    Routes} from "react-router-dom";
-import { Shop } from './components/Shop'
+import { createBrowserRouter, RouterProvider, createRoutesFromElements, Route } from 'react-router-dom'
+
+import { Shop } from './pages/Shop'
+import { NotFound } from './pages/404'
 
 export function App() {
 
+    const router = createBrowserRouter(createRoutesFromElements(
+        <Route path='/' element={<Shop />} errorElement={<NotFound />}/>
+    ))
+
     return (
         <main className='bg-zinc-100 dark:bg-zinc-900 transition-colors duration-300'>
-            <Router>
-                <Routes >
-                    <Route path='/' element={<Shop />} />
-                </Routes>
-            </Router>
+            <RouterProvider router={router}/>
         </main>
     )
 }
