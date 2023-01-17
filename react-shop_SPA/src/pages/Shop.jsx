@@ -1,5 +1,5 @@
-import React, {useState, useEffect, useContext} from 'react'
-import {API_KEY, API_URL} from '../config'
+import React, { useState, useEffect, useContext } from 'react'
+import { API_KEY, API_URL } from '../config'
 import { OrderContext } from '../hooks/OrderContext'
 
 import {Preloader} from '../components/Preloader'
