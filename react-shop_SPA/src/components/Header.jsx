@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { ThemeSwitcher } from './ThemeSwitcher'
 import { Cart } from './Cart'
 
@@ -11,19 +11,19 @@ export function Header(props) {
             </span>
             <ul className='flex flex-row px-6'>
                 <li className='mr-4'>
-                    <Link to='/' className='text-zinc-700 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-zinc-100 ease-in duration-150'>
+                    <NavLink to='/' end className='text-zinc-700 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-zinc-100 ease-in duration-150'>
                         Home
-                    </Link>
+                    </NavLink>
                 </li>
                 <li className='mr-4'>
-                    <Link to='/cart' className='text-zinc-700 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-zinc-100 ease-in duration-150'>
+                    <NavLink to='/cart' className='text-zinc-700 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-zinc-100 ease-in duration-150'>
                         Cart
-                    </Link>
+                    </NavLink>
                 </li>
                 <li className='mr-4'>
-                    <Link to='/faq' className='text-zinc-700 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-zinc-100 ease-in duration-150'>
+                    <NavLink to='/faq' className='text-zinc-700 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-zinc-100 ease-in duration-150'>
                         FAQ
-                    </Link>
+                    </NavLink>
                 </li>
             </ul>
             <ul className='flex absolute top-[50%] right-5 lg:right-10 translate-y-[-50%]'>

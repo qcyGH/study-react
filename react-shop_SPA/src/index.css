@@ -58,3 +58,11 @@ section{
 main {
   flex: 1 1 auto;
 }
+
+a {
+  opacity: 0.7;
+}
+
+a.active {
+  opacity: 1;
+}
