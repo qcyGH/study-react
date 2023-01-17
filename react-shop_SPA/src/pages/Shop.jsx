@@ -25,10 +25,10 @@ export function Shop() {
     }, [])
 
     return (
-        <section className='content'>
+        <>
             {
                 loading ? <Preloader /> : <List items={items} />
             }
-        </section>
+        </>
     )
 }

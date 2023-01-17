@@ -6,17 +6,20 @@ import { CartPage } from './pages/Cart'
 import { FAQPage } from './pages/FAQ'
 import { NotFound } from './pages/404'
 
+import { Layout } from './components/Layout'
+
 export function App() {
 
-
     return (
-        <main className='bg-zinc-100 dark:bg-zinc-900 transition-colors duration-300'>
+        <>
             <Routes>
-                <Route path='/' element={<Shop />} />
-                <Route path='/cart' element={<CartPage />} />
-                <Route path='/faq' element={<FAQPage />} />
-                <Route path='*' element={<NotFound />} />
+                <Route path='/' element={<Layout />}>
+                    <Route index element={<Shop />} />
+                    <Route path='/cart' element={<CartPage />} />
+                    <Route path='/faq' element={<FAQPage />} />
+                    <Route path='*' element={<NotFound />} />
+                </Route>
             </Routes>
-        </main>
+        </>
     )
 }

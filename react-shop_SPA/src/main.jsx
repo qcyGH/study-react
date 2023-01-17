@@ -11,10 +11,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
       <Context>
-        <Header />
         <App />
       </Context>
-      <Footer />
     </BrowserRouter>
   </React.StrictMode>
 )
