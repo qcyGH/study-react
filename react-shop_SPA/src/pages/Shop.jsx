@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react'
-import { API_KEY, API_URL } from '../config'
+import { API_KEY, API_URL_SHOP } from '../config'
 import { OrderContext } from '../hooks/OrderContext'
 
 import {Preloader} from '../components/Preloader'
@@ -11,7 +11,7 @@ export function Shop() {
     const { orderList } = useContext(OrderContext)
 
     useEffect(function getItems() {
-        fetch(API_URL, {
+        fetch(API_URL_SHOP, {
             headers: {
                 Authorization: API_KEY,
             }

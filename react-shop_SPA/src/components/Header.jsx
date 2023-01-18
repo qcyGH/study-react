@@ -16,6 +16,11 @@ export function Header(props) {
                     </NavLink>
                 </li>
                 <li className='mr-4'>
+                    <NavLink to='/news' end className='text-zinc-700 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-zinc-100 ease-in duration-150'>
+                        News
+                    </NavLink>
+                </li>
+                <li className='mr-4'>
                     <NavLink to='/cart' className='text-zinc-700 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-zinc-100 ease-in duration-150'>
                         Cart
                     </NavLink>
