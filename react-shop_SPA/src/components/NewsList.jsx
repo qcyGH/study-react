@@ -11,8 +11,6 @@ export function NewsList(props) {
                         title={item.title}
                         body={item.body}
                         image={item.image}
-                        key={item.offerId}
-                        id={item.offerId}
                     />
                 ))
             }

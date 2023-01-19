@@ -7,10 +7,6 @@ export function Preloader(props) {
             <Skeleton height='489px' width='300px' isLoaded={!props.isLoading} fadeDuration={1}/>
             <Skeleton height='489px' width='300px' isLoaded={!props.isLoading} fadeDuration={1}/>
             <Skeleton height='489px' width='300px' isLoaded={!props.isLoading} fadeDuration={1}/>
-            <Skeleton height='489px' width='300px' isLoaded={!props.isLoading} fadeDuration={1}/>
-            <Skeleton height='489px' width='300px' isLoaded={!props.isLoading} fadeDuration={1}/>
-            <Skeleton height='489px' width='300px' isLoaded={!props.isLoading} fadeDuration={1}/>
-            <Skeleton height='489px' width='300px' isLoaded={!props.isLoading} fadeDuration={1}/>
         </ChakraProvider>
     )
 }

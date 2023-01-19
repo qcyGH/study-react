@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { API_KEY, API_URL_NEWS } from '../config'
 
-import { Preloader } from '../components/Preloader'
 import { NewsList } from '../components/NewsList'
 
 export function NewsPage() {
@@ -30,7 +29,31 @@ export function NewsPage() {
             </h1>
 
             {
-                loading ? <Preloader /> : <NewsList items={items.stw.messages} />
+                (!loading && (items.br.messages || items.br.image)) && <>
+                    <h2 className='mt-10 text-center text-2xl font-semibold text-gray-700 dark:text-gray-200 transition-color duration-150 ease-in'>
+                        Battle pass
+                    </h2>
+                    {
+                        items.br.image && <img className='mt-5 rounded-md' src={items.br.image} alt='fortnite battle pass'/>
+                    }
+                    {
+                        items.br.messages &&<NewsList items={items.br.messages} />
+                    }
+                </>
+            }
+
+{
+                (!loading && (items.stw.messages || items.stw.image)) && <>
+                    <h2 className='mt-10 text-center text-2xl font-semibold text-gray-700 dark:text-gray-200 transition-color duration-150 ease-in'>
+                        Save the World
+                    </h2>
+                    {
+                        items.stw.image && <img className='mt-5 rounded-md' src={items.stw.image} alt='fortnite save the world'/>
+                    }
+                    {
+                        items.stw.messages &&<NewsList items={items.stw.messages} />
+                    }
+                </>
             }
         </>
     )

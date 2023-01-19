@@ -3,7 +3,6 @@ export function NewsItem(props) {
         title,
         body,
         image,
-        id,
     } = props
 
     return (
