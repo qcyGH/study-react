@@ -1,6 +1,7 @@
 import { NavLink, Link, useLocation, Navigate } from 'react-router-dom'
 import { ThemeSwitcher } from './ThemeSwitcher'
 import { Cart } from './Cart'
+import { User } from './User'
 
 import { useAuth } from '../hooks/useAuth'
 
@@ -38,11 +39,7 @@ export function Header(props) {
             </ul>
             <ul className='flex items-center absolute top-[50%] right-5 lg:right-10 translate-y-[-50%]'>
                 <li className='px-1'>
-                    {
-                        user ? <span className='text-zinc-700 leading-none hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-zinc-100 ease-in duration-150'>
-                            {user}
-                        </span> : <Link to='/login' state={{from: location}}>login</Link>
-                    }
+                    <User />
                 </li>
                 <li className='mr-2'>
                     <Cart />
