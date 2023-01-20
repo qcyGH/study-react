@@ -31,10 +31,10 @@ export function Card(props) {
                         </h3>
                         <button
                             onClick={() => addItem({name, id, description, finalPrice})}
-                            className='flex flex-col place-self-center group relative overflow-hidden text-gray-100 bg-gray-800 dark:text-gray-900 dark:bg-gray-300 px-7 pt-5 pb-1 mt-4 mb-2 rounded-md hover:pt-3 hover:pb-3 active:scale-90 transition-all ease- duration-200'
+                            className='flex flex-col place-self-center group relative overflow-hidden text-gray-100 bg-gray-800 dark:text-gray-900 dark:bg-gray-300 px-10 pt-5 pb-1 mt-4 mb-2 rounded-md hover:pt-3 hover:pb-3 active:scale-90 transition-all ease duration-200'
                             >
                             <span className='text-sm text-gray-200 bg-green-700 w-[101%] absolute top-0 left-[50%] translate-x-[-50%] group-hover:translate-y-[-100%] transition-transform ease- duration-200'>
-                                {finalPrice}
+                                {finalPrice} V-Bucks
                             </span>
                             BUY
                         </button>

@@ -34,7 +34,7 @@ export function NewsPage() {
                         Battle pass
                     </h2>
                     {
-                        items.br.image && <img className='mt-5 rounded-md' src={items.br.image} alt='fortnite battle pass'/>
+                        items.br.image && <img className='mt-5 rounded-lg shadow-lg shadow-zinc-400/50 dark:shadow-zinc-900/50 w-max h-max hover:shadow-none hover:scale-95 transition-all duration-150 ease-in' src={items.br.image} alt='fortnite battle pass'/>
                     }
                     {
                         items.br.messages &&<NewsList items={items.br.messages} />
