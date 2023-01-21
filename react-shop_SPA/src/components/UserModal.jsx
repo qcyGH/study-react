@@ -46,7 +46,7 @@ export function UserModal(props) {
                             </button>
                         </div> : <Link className='opacity-100 pr-6 text-zinc-700 leading-none hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-zinc-100 ease-in duration-150' to='/login' state={{from: location}}>
                                     Login
-                                </Link>
+                        </Link>
             }
             <span className='absolute top-1 right-1 flex'>
                 <IconButton
