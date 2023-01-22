@@ -27,7 +27,7 @@ export function Shop() {
     return (
         <>
             {
-                loading ? <Preloader /> : <List items={items} />
+                loading ? <Preloader isLoading={loading} /> : <List items={items} />
             }
         </>
     )
