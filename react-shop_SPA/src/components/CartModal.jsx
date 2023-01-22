@@ -5,6 +5,7 @@ import { OrderContext } from '../hooks/OrderContext'
 import { CartItem } from './CartItem'
 
 export function CartModal(props) {
+    const { removeItem } = useContext(OrderContext)
     const { items = [], show, closeModalOutside, closeModal } = props
     const [totalPrice, setTotalPrice] = useState(0)
     const rootCartModal = useRef(null)
@@ -51,18 +52,24 @@ export function CartModal(props) {
             {
                 items.length > 0
                 ? <div className='pb-2'>
-                    <div className='grid auto-rows-max grid-cols-5 gap-x-4 gap-y-2.5 py-4 px-4'>
+                    <div className='grid auto-rows-max grid-cols-3 gap-x-4 gap-y-2.5 py-4 px-4'>
                         <div className='pl-1'>Name</div>
-                        <div className='pl-1'>Description</div>
                         <div className='pl-1'>Price</div>
-                        <div className='pl-1'>Quantity</div>
                         <div></div>
                         {
                             items.map(item => (
-                                <CartItem
-                                item={item}
-                                key={item.id}
-                                />
+                                <>
+                                    <div className='pl-2 pr-4 py-1 bg-zinc-200/30 dark:bg-zinc-900/30 hover:bg-zinc-200/90 dark:hover:bg-zinc-900/90 rounded-md transition-color duration-100'>
+                                        {item.name}
+                                    </div>
+                                    <div className='pl-2 pr-4 py-1 bg-zinc-200/30 dark:bg-zinc-900/30 hover:bg-zinc-200/90 dark:hover:bg-zinc-900/90 rounded-md transition-color duration-100'>
+                                        {item.finalPrice}
+                                    </div>
+                                    <button onClick={() => removeItem(item.id)}
+                                        className='text-zinc-200 bg-rose-800 hover:bg-rose-900 rounded-md'>
+                                        X
+                                    </button>
+                                </>
                             ))
                         }
                     </div>
