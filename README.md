@@ -12,7 +12,7 @@
     - [Event processing](https://github.com/qcyGH/study-react#event-processing)
     - [Conditional rendering](https://github.com/qcyGH/study-react#conditional-rendering)
     - [Lists and keys](https://github.com/qcyGH/study-react#lists-and-keys)
-    - [Forms](https://github.com/qcyGH/study-reactd#forms)
+    - [Forms](https://github.com/qcyGH/study-react#forms)
   - I lost the point of writing these cheat sheets, because all the actual information are in the official documentation. So, I will not continue to write exactly these cheat sheets...
  
 
