@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useEffect } from 'react'
 import { API_KEY, API_URL_NEWS } from '../config'
 
 import { NewsList } from '../components/NewsList'
@@ -18,7 +18,7 @@ export function NewsPage() {
             .then(response => response.json())
             .then(data => {
                 data.status === 200 && setItems(data.data)
-                console.log(data.data)
+                //console.log(data.data)
                 setLoading(false)
             })
     }, [])
@@ -33,7 +33,7 @@ export function NewsPage() {
                 !loading ? <>
                     {
                         (items.br?.image || items.br?.messages) && <h2 className='mt-10 text-center text-2xl font-semibold text-gray-700 dark:text-gray-200 transition-color duration-150 ease-in'>
-                            Battle pass
+                            Battle Royale
                         </h2>
                     }
                     {
