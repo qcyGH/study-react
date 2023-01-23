@@ -33,19 +33,19 @@ export function CartPage() {
 
             {
                 orderList.length > 0
-                ? <div className='w-max p-2 pr-4 mt-10
+                ? <div className='w-full p-2 pr-4 mt-10
                     bg-zinc-300/90 dark:bg-zinc-800/90 rounded-md backdrop-blur-xl backdrop-saturate-150
                     shadow-lg shadow-zinc-400/50 dark:shadow-zinc-900/50
                     text-zinc-900 dark:text-zinc-200
                     transition-color duration-300
                     '>
                     <div className='pb-2'>
-                        <div className='grid auto-rows-max grid-cols-5 gap-x-4 gap-y-2.5 py-4 px-4'>
-                            <div className='pl-1'>Name</div>
-                            <div className='pl-1'>Description</div>
-                            <div className='pl-1'>Price</div>
-                            <div className='pl-1'>Quantity</div>
-                            <div></div>
+                        <div className='grid auto-rows-max grid-cols-11 gap-x-4 gap-y-2.5 py-4 px-4'>
+                            <div className='pl-1 col-span-3'>Name</div>
+                            <div className='pl-1 col-span-3'>Description</div>
+                            <div className='pl-1 col-span-2'>Price</div>
+                            <div className='pl-1 col-span-2'>Quantity</div>
+                            <div className='col-span-1'></div>
                             {
                                 orderList.map(item => (
                                     <CartItem

@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useRef, useContext } from 'react'
-import { Icon, IconButton } from '@chakra-ui/react'
+import { IconButton } from '@chakra-ui/react'
 import { CloseIcon } from '@chakra-ui/icons'
 import { OrderContext } from '../hooks/OrderContext'
-import { CartItem } from './CartItem'
 
 export function CartModal(props) {
     const { removeItem } = useContext(OrderContext)
@@ -52,23 +51,26 @@ export function CartModal(props) {
             {
                 items.length > 0
                 ? <div className='pb-2'>
-                    <div className='grid auto-rows-max grid-cols-3 gap-x-4 gap-y-2.5 py-4 px-4'>
-                        <div className='pl-1'>Name</div>
-                        <div className='pl-1'>Price</div>
+                    <div className='grid auto-rows-max grid-cols-8 gap-x-4 gap-y-2.5 py-4 px-4'>
+                        <div className='pl-1 col-span-5'>Name</div>
+                        <div className='pl-1 col-span-2'>Price</div>
                         <div></div>
                         {
                             items.map(item => (
                                 <>
-                                    <div className='pl-2 pr-4 py-1 bg-zinc-200/30 dark:bg-zinc-900/30 hover:bg-zinc-200/90 dark:hover:bg-zinc-900/90 rounded-md transition-color duration-100'>
+                                    <div className='col-span-5 pl-2 pr-4 py-1 bg-zinc-200/30 dark:bg-zinc-900/30 hover:bg-zinc-200/90 dark:hover:bg-zinc-900/90 rounded-md transition-color duration-100'>
                                         {item.name}
                                     </div>
-                                    <div className='pl-2 pr-4 py-1 bg-zinc-200/30 dark:bg-zinc-900/30 hover:bg-zinc-200/90 dark:hover:bg-zinc-900/90 rounded-md transition-color duration-100'>
+                                    <div className='col-span-2 pl-2 pr-4 py-1 bg-zinc-200/30 dark:bg-zinc-900/30 hover:bg-zinc-200/90 dark:hover:bg-zinc-900/90 rounded-md transition-color duration-100'>
                                         {item.finalPrice}
                                     </div>
-                                    <button onClick={() => removeItem(item.id)}
-                                        className='text-zinc-200 bg-rose-800 hover:bg-rose-900 rounded-md'>
-                                        X
-                                    </button>
+                                    <IconButton
+                                        aria-label='Remove item'
+                                        icon={<CloseIcon w={12} h={12}/>}
+                                        className='text-zinc-200 bg-rose-800 hover:bg-rose-900 rounded-md'
+                                        onClick={() => removeItem(id)}
+                                    >
+                                    </IconButton>
                                 </>
                             ))
                         }
