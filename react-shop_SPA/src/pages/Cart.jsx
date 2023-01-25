@@ -2,7 +2,7 @@ import { useState, useEffect,useContext } from 'react'
 import { Link } from 'react-router-dom'
 
 import { StoreProvider } from '../hoc/StoreProvider'
-
+import { CartItemOld } from '../components/CartItemOld'
 import { CartItem } from '../components/CartItem'
 
 export function CartPage() {
@@ -40,12 +40,7 @@ export function CartPage() {
                     transition-color duration-300
                     '>
                     <div className='pb-2'>
-                        <div className='grid auto-rows-max grid-cols-11 gap-x-4 gap-y-2.5 py-4 px-4'>
-                            <div className='pl-1 col-span-3'>Name</div>
-                            <div className='pl-1 col-span-3'>Description</div>
-                            <div className='pl-1 col-span-2'>Price</div>
-                            <div className='pl-1 col-span-2'>Quantity</div>
-                            <div className='col-span-1'></div>
+                        <div className='flex-col py-4 px-4'>
                             {
                                 orderList.map(item => (
                                     <CartItem
