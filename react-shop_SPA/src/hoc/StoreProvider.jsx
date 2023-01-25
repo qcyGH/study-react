@@ -4,7 +4,7 @@ import { useToast } from '@chakra-ui/react'
 
 export const StoreProvider = createContext()
 
-export function Context(props) {
+export function StoreContext(props) {
     const [items, setItems] = useState([])
     const [loading, setLoading] = useState(true)
     const [orderList, setOrderList] = useState([])
