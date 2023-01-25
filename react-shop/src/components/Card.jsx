@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { OrderContext } from '../hooks/OrderContext'
+import { StoreProvider } from '../hoc/StoreProvider'
 import { ChakraProvider } from '@chakra-ui/react'
 
 
@@ -11,7 +11,7 @@ export function Card(props) {
         description,
         finalPrice,
     } = props
-    const { addItem } = useContext(OrderContext)
+    const { addItem } = useContext(StoreProvider)
 
     return (
         <ChakraProvider>

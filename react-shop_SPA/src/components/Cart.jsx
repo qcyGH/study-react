@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef, useContext } from 'react'
 import { Icon, IconButton } from '@chakra-ui/react'
-import { OrderContext } from '../hooks/OrderContext'
+import { StoreProvider } from '../hoc/StoreProvider'
 import { CartModal } from './CartModal'
 
 export function Cart(props) {
-    const { orderList } = useContext(OrderContext)
+    const { orderList } = useContext(StoreProvider)
     const [showModal, setShowModal] = useState(false)
     const cartRef = useRef(null)
 

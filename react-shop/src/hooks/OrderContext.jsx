@@ -1,7 +1,7 @@
 import React, {createContext, useState} from 'react'
 import { useToast } from '@chakra-ui/react'
 
-export const OrderContext = createContext()
+export const StoreProvider = createContext()
 
 export function Context(props) {
     const [orderList, setOrderList] = useState([])
@@ -66,8 +66,8 @@ export function Context(props) {
     }
 
     return (
-        <OrderContext.Provider value={{orderList, addItem, removeItem, changeQuantity}}>
+        <StoreProvider.Provider value={{orderList, addItem, removeItem, changeQuantity}}>
             {props.children}
-        </OrderContext.Provider>
+        </StoreProvider.Provider>
     )
 }

@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef, useContext } from 'react'
 import { IconButton } from '@chakra-ui/react'
 import { CloseIcon } from '@chakra-ui/icons'
-import { OrderContext } from '../hooks/OrderContext'
+import { StoreProvider } from '../hoc/StoreProvider'
 
 export function CartModal(props) {
-    const { removeItem } = useContext(OrderContext)
+    const { removeItem } = useContext(StoreProvider)
     const { items = [], show, closeModalOutside, closeModal } = props
     const [totalPrice, setTotalPrice] = useState(0)
     const rootCartModal = useRef(null)

@@ -1,13 +1,13 @@
 import { useState, useEffect,useContext } from 'react'
 import { Link } from 'react-router-dom'
 
-import { OrderContext } from '../hooks/OrderContext'
+import { StoreProvider } from '../hoc/StoreProvider'
 
 import { CartItem } from '../components/CartItem'
 
 export function CartPage() {
 
-    const { orderList } = useContext(OrderContext)
+    const { orderList } = useContext(StoreProvider)
 
     const [totalPrice, setTotalPrice] = useState(0)
 

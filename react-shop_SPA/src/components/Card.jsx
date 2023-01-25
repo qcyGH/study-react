@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { OrderContext } from '../hooks/OrderContext'
+import { StoreProvider } from '../hoc/StoreProvider'
 
 export function Card(props) {
     const {
@@ -9,7 +9,7 @@ export function Card(props) {
         description,
         finalPrice,
     } = props
-    const { addItem } = useContext(OrderContext)
+    const { addItem } = useContext(StoreProvider)
 
     return (
             <div className='relative bg-zinc-200 dark:bg-zinc-800 rounded-lg shadow-lg shadow-zinc-400/50 dark:shadow-zinc-900/50 w-max h-max hover:shadow-none hover:scale-95 transition-all duration-150 ease-in'>

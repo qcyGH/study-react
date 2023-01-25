@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useContext } from 'react'
 import { Icon, IconButton } from '@chakra-ui/react'
 import { CloseIcon } from '@chakra-ui/icons'
-import { OrderContext } from '../hooks/OrderContext'
+import { StoreProvider } from '../hoc/StoreProvider'
 import { CartItem } from './CartItem'
 
 export function CartModal(props) {

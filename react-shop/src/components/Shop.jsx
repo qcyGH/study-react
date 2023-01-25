@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useContext} from 'react'
 import {API_KEY, API_URL_SHOP} from '../config'
-import { OrderContext } from '../hooks/OrderContext'
+import { StoreProvider } from '../hoc/StoreProvider'
 
 import {Preloader} from './Preloader'
 import {List} from './List'
@@ -8,7 +8,7 @@ import {List} from './List'
 export function Shop() {
     const [items, setItems] = useState([])
     const [loading, setLoading] = useState(true)
-    const { orderList } = useContext(OrderContext)
+    const { orderList } = useContext(StoreProvider)
 
     useEffect(function getItems() {
         fetch(API_URL_SHOP, {

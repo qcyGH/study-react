@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { Icon, IconButton } from '@chakra-ui/react'
 import { AddIcon, MinusIcon } from '@chakra-ui/icons'
-import { OrderContext } from '../hooks/OrderContext'
+import { StoreProvider } from '../hoc/StoreProvider'
 
 export function CartItem(props) {
-    const { removeItem, changeQuantity } = useContext(OrderContext)
+    const { removeItem, changeQuantity } = useContext(StoreProvider)
     const { item } = props
     const {
         name,
