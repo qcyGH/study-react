@@ -1,10 +1,12 @@
+import { ChakraProvider } from '@chakra-ui/react'
+
 import { Card } from './Card'
 
 export function List(props) {
     const { items = [] } = props
 
     return (
-        <>
+        <ChakraProvider>
             <h2 className='text-2xl font-semibold text-gray-700 dark:text-gray-200 transition-color duration-150 ease-in'>
                 Daily
             </h2>
@@ -67,7 +69,18 @@ export function List(props) {
                                         />
                     ))
                 }
+                {
+                    items.specialFeatured?.entries?.map(item => (
+                        !item.bundle && <Card
+                                            image={item.items[0].images.featured}
+                                            key={item.offerId} id={item.offerId}
+                                            description={item.items[0].description}
+                                            name={item.items[0].name}
+                                            finalPrice={item.finalPrice}
+                                        />
+                    ))
+                }
             </div>
-        </>
+        </ChakraProvider>
     )
 }
