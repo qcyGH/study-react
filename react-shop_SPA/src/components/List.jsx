@@ -20,7 +20,6 @@ export function List(props) {
                 {
                     items.daily?.entries?.map(item => (
                         item.items[1] ? <CardSlider
-                                            name={item.items[0].name}
                                             items={item.items}
                                             key={item.offerId} id={item.offerId}
                                             finalPrice={item.finalPrice}
@@ -54,7 +53,6 @@ export function List(props) {
                 {
                     items.featured?.entries?.map(item => (
                         (!item.bundle && item.items[1]) ? <CardSlider
-                                                                name={item.items[0].name}
                                                                 items={item.items}
                                                                 key={item.offerId} id={item.offerId}
                                                                 finalPrice={item.finalPrice}
@@ -88,7 +86,6 @@ export function List(props) {
                 {
                     items.specialFeatured?.entries?.map(item => (
                         !item.bundle ? <CardSlider
-                                            name={item.items[0].name}
                                             items={item.items}
                                             key={item.offerId} id={item.offerId}
                                             finalPrice={item.finalPrice}

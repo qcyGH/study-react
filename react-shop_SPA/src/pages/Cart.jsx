@@ -2,7 +2,6 @@ import { useState, useEffect,useContext } from 'react'
 import { Link } from 'react-router-dom'
 
 import { StoreProvider } from '../hoc/StoreProvider'
-import { CartItemOld } from '../components/CartItemOld'
 import { CartItem } from '../components/CartItem'
 
 export function CartPage() {

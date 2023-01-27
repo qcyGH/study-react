@@ -1,4 +1,4 @@
-import { NavLink, Link, useLocation, Navigate } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import { ThemeSwitcher } from './ThemeSwitcher'
 import { Cart } from './Cart'
 import { User } from './User'

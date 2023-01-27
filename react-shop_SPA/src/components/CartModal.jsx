@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useContext } from 'react'
+import { Link } from 'react-router-dom'
 import { IconButton } from '@chakra-ui/react'
 import { CloseIcon } from '@chakra-ui/icons'
 import { StoreProvider } from '../hoc/StoreProvider'
@@ -50,7 +51,7 @@ export function CartModal(props) {
             '>
             {
                 items.length > 0
-                ? <div className='pb-2'>
+                ? <div className='flex flex-col items-end pb-2'>
                     <div className='grid auto-rows-max grid-cols-8 gap-x-4 gap-y-2.5 py-4 px-4'>
                         <div className='pl-1 col-span-5'>Name</div>
                         <div className='pl-1 col-span-2'>Price</div>
@@ -67,15 +68,21 @@ export function CartModal(props) {
                                     <IconButton
                                         aria-label='Remove item'
                                         icon={<CloseIcon w={12} h={12}/>}
-                                        className='text-zinc-200 bg-rose-800 hover:bg-rose-900 rounded-md'
-                                        onClick={() => removeItem(id)}
+                                        className='w-8 h-8 text-zinc-200 bg-rose-800 hover:bg-rose-900 rounded-md'
+                                        onClick={() => removeItem(item.id)}
                                     >
                                     </IconButton>
                                 </>
                             ))
                         }
                     </div>
-                    <span className='block text-right pr-2'>Total price: {totalPrice}</span>
+                    <span className='opacity-75 block text-right pr-2'>Total price: {totalPrice}</span>
+                    <Link
+                        to='/cart'
+                        className='w-max opacity-100 text-slate-100 bg-orange-600 mt-6 px-6 py-2 my-2 rounded-md hover:scale-95 active:scale-90 transition-all ease duration-200'
+                    >
+                        Open Cart
+                    </Link>
                 </div>
                 : <span className='pr-6'>Cart is empty</span>
             }
