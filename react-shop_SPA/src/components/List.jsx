@@ -1,6 +1,8 @@
 import { ChakraProvider } from '@chakra-ui/react'
 
-import { Card } from './Card'
+import { Card, CardSlider } from './Card'
+
+import 'swiper/css/bundle'
 
 export function List(props) {
     const { items = [] } = props
@@ -13,7 +15,12 @@ export function List(props) {
             <div className='mt-3 grid justify-items-center grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8'>
                 {
                     items.daily?.entries?.map(item => (
-                        item.items[0] && <Card
+                        item.items[1] ? <CardSlider
+                                            name={item.items[0].name}
+                                            items={item.items}
+                                            key={item.offerId} id={item.offerId}
+                                            finalPrice={item.finalPrice}
+                                        /> : <Card
                                             image={item.items[0].images.featured}
                                             key={item.offerId} id={item.offerId}
                                             description={item.items[0].description}
@@ -42,7 +49,12 @@ export function List(props) {
                 }
                 {
                     items.featured?.entries?.map(item => (
-                        (!item.bundle && item.items[0]) && <Card
+                        (!item.bundle && item.items[1]) ? <CardSlider
+                                                                name={item.items[0].name}
+                                                                items={item.items}
+                                                                key={item.offerId} id={item.offerId}
+                                                                finalPrice={item.finalPrice}
+                                                            /> : <Card
                                                                 image={item.items[0].images.featured}
                                                                 key={item.offerId} id={item.offerId}
                                                                 description={item.items[0].description}
@@ -71,7 +83,12 @@ export function List(props) {
                 }
                 {
                     items.specialFeatured?.entries?.map(item => (
-                        !item.bundle && <Card
+                        !item.bundle ? <CardSlider
+                                            name={item.items[0].name}
+                                            items={item.items}
+                                            key={item.offerId} id={item.offerId}
+                                            finalPrice={item.finalPrice}
+                                        /> : <Card
                                             image={item.items[0].images.featured}
                                             key={item.offerId} id={item.offerId}
                                             description={item.items[0].description}
