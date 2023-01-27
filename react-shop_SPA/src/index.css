@@ -66,3 +66,36 @@ a {
 a.active {
   opacity: 1;
 }
+
+/* Slider */
+
+.swiper-button-next, .swiper-button-prev {
+	width: calc(22px/ 44 * 27);
+	height: 22px;
+	margin-top: calc(0px - (22px/ 2));
+	color: #9d4dbb;
+}
+
+.swiper-button-next::after, .swiper-button-prev::after {
+	font-size: 22px;
+}
+
+.swiper-pagination-bullet {
+  border-radius: 5rem;
+	width: 8px;
+	height: 8px;
+	background: #9d4dbb;
+
+  transition: width 300ms ease;
+}
+
+.swiper-pagination-bullet-active {
+	width: 16px;
+	background: #9d4dbb;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+	bottom: 55px;
+}
+
+/* Slider */

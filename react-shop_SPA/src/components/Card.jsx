@@ -61,7 +61,11 @@ export function CardSlider(props) {
                     modules={[Navigation, Pagination, Autoplay, Mousewheel]}
                     spaceBetween={50}
                     slidesPerView={1}
-                    autoplay={{ delay: 3000 }}
+                    autoplay={{
+                        delay: 3000,
+                        pauseOnMouseEnter: true,
+                    }}
+                    mousewheel
                     navigation
                     pagination={{ clickable: true }}
                 >
@@ -81,7 +85,7 @@ export function CardSlider(props) {
                                         />
                                     }
                                 </div>
-                                <div className='flex flex-col p-3 pb-8'>
+                                <div className='flex flex-col p-3'>
                                         <h3 className='text-sm text-gray-700 dark:text-gray-200 transition-color duration-150 ease-in'>
                                             {item.name}
                                         </h3>

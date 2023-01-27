@@ -2,7 +2,11 @@ import { ChakraProvider } from '@chakra-ui/react'
 
 import { Card, CardSlider } from './Card'
 
-import 'swiper/css/bundle'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+import 'swiper/css/autoplay'
+import 'swiper/css/mousewheel'
 
 export function List(props) {
     const { items = [] } = props
