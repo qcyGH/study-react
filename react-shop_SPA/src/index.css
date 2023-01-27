@@ -69,6 +69,10 @@ a.active {
 
 /* Slider */
 
+.swiper {
+  margin: 0;
+}
+
 .swiper-button-next, .swiper-button-prev {
 	width: calc(22px/ 44 * 27);
 	height: 22px;
@@ -96,6 +100,10 @@ a.active {
 
 .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
 	bottom: 55px;
+}
+
+.cart__item .swiper-horizontal > .swiper-pagination-bullets {
+	bottom: 0px;
 }
 
 /* Slider */

@@ -78,7 +78,6 @@ export function StoreContext(props) {
 
     // function for notification while adding item to order
     const showNotification = (name) => {
-        console.log('Toast')
         notification({
             title: `Successful added ${name} to cart`,
             status: 'success',

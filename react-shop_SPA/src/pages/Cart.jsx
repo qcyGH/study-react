@@ -2,7 +2,7 @@ import { useState, useEffect,useContext } from 'react'
 import { Link } from 'react-router-dom'
 
 import { StoreProvider } from '../hoc/StoreProvider'
-import { CartItem } from '../components/CartItem'
+import { CartItem, CartItemSlider } from '../components/CartItem'
 
 export function CartPage() {
 
@@ -42,9 +42,13 @@ export function CartPage() {
                         <div className='flex-col py-4 px-4'>
                             {
                                 orderList.map(item => (
-                                    <CartItem
-                                    item={item}
-                                    key={item.id}
+                                    item.items ? <CartItemSlider
+                                        item={item}
+                                        key={item.id}
+                                    />
+                                    : <CartItem
+                                        item={item}
+                                        key={item.id}
                                     />
                                 ))
                             }
