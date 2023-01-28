@@ -17,10 +17,7 @@ export function Cart(props) {
     )
 
     const closeModalOutside = (e) => {
-        console.log(e.composedPath().includes(cartRef.current))
         if (!e.composedPath().includes(cartRef.current)) {
-            console.log(e.target)
-            console.log('Close modal')
             setShowModal(false)
         }
     }

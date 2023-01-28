@@ -19,17 +19,30 @@ export function List(props) {
             <div className='mt-3 grid justify-items-center grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8'>
                 {
                     items.daily?.entries?.map(item => (
-                        item.items[1] ? <CardSlider
-                                            items={item.items}
-                                            key={item.offerId} id={item.offerId}
-                                            finalPrice={item.finalPrice}
-                                        /> : <Card
-                                            image={item.items[0].images.featured}
-                                            key={item.offerId} id={item.offerId}
-                                            description={item.items[0].description}
-                                            name={item.items[0].name}
+                        item.bundle && <Card
+                                            id={item.offerId}
+                                            key={item.offerId}
+                                            name={item.bundle.name}
+                                            description={item.bundle.info}
+                                            image={item.bundle.image}
+                                            bundle={item.items}
                                             finalPrice={item.finalPrice}
                                         />
+                    ))
+                }
+                {
+                    items.daily?.entries?.map(item => (
+                        (!item.bundle && item.items[1]) ? <CardSlider
+                                                                items={item.items}
+                                                                key={item.offerId} id={item.offerId}
+                                                                finalPrice={item.finalPrice}
+                                                            /> : <Card
+                                                                image={item.items[0].images.featured}
+                                                                key={item.offerId} id={item.offerId}
+                                                                description={item.items[0].description}
+                                                                name={item.items[0].name}
+                                                                finalPrice={item.finalPrice}
+                                                            />
                     ))
                 }
             </div>
@@ -41,11 +54,12 @@ export function List(props) {
                 {
                     items.featured?.entries?.map(item => (
                         item.bundle && <Card
-                                            image={item.bundle.image}
-                                            key={item.offerId}
                                             id={item.offerId}
-                                            description={item.bundle.info}
+                                            key={item.offerId}
                                             name={item.bundle.name}
+                                            description={item.bundle.info}
+                                            image={item.bundle.image}
+                                            bundle={item.items}
                                             finalPrice={item.finalPrice}
                                         />
                     ))
@@ -74,28 +88,29 @@ export function List(props) {
                 {
                     items.specialFeatured?.entries?.map(item => (
                         item.bundle && <Card
-                                            image={item.bundle.image}
-                                            key={item.offerId}
                                             id={item.offerId}
-                                            description={item.bundle.info}
+                                            key={item.offerId}
                                             name={item.bundle.name}
+                                            description={item.bundle.info}
+                                            image={item.bundle.image}
+                                            bundle={item.items}
                                             finalPrice={item.finalPrice}
                                         />
                     ))
                 }
                 {
                     items.specialFeatured?.entries?.map(item => (
-                        !item.bundle ? <CardSlider
-                                            items={item.items}
-                                            key={item.offerId} id={item.offerId}
-                                            finalPrice={item.finalPrice}
-                                        /> : <Card
-                                            image={item.items[0].images.featured}
-                                            key={item.offerId} id={item.offerId}
-                                            description={item.items[0].description}
-                                            name={item.items[0].name}
-                                            finalPrice={item.finalPrice}
-                                        />
+                        (!item.bundle && item.items[1]) ? <CardSlider
+                                                                items={item.items}
+                                                                key={item.offerId} id={item.offerId}
+                                                                finalPrice={item.finalPrice}
+                                                            /> : <Card
+                                                                image={item.items[0].images.featured}
+                                                                key={item.offerId} id={item.offerId}
+                                                                description={item.items[0].description}
+                                                                name={item.items[0].name}
+                                                                finalPrice={item.finalPrice}
+                                                            />
                     ))
                 }
             </div>

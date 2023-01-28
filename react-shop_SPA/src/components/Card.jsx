@@ -1,5 +1,7 @@
 import React, { useContext } from 'react'
 
+import { BundleModal } from './BundleModal'
+
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, Autoplay, Mousewheel } from 'swiper'
 
@@ -7,10 +9,11 @@ import { StoreProvider } from '../hoc/StoreProvider'
 
 export function Card(props) {
     const {
-        image,
-        name,
         id,
+        name,
         description,
+        image,
+        bundle,
         finalPrice,
     } = props
     const { addItem } = useContext(StoreProvider)
@@ -21,16 +24,21 @@ export function Card(props) {
                     <img
                         src={image}
                         alt={name}
-                        className='object-cover object-center w-72 p-3'
+                        className='object-cover object-center w-72'
                     />
                 </div>
                 <div className='flex flex-col justify-between max-w-[264px] p-3'>
                         <h3 className='text-sm text-gray-700 dark:text-gray-200 transition-color duration-150 ease-in'>
                             {name}
                         </h3>
-                        <span className="text-sm text-gray-700 dark:text-gray-200 transition-color duration-150 ease-in break-words opacity-[0.60]">
-                            {description}
-                        </span>
+                        {
+                            bundle ? <BundleModal
+                                        title={description}
+                                        items={bundle}
+                                    /> : <span className='text-sm text-gray-700 dark:text-gray-200 transition-color duration-150 ease-in break-words opacity-[0.60]'>
+                                            { description }
+                                        </span>
+                        }
                         <button
                             onClick={() => addItem({name, image, id, description, finalPrice})}
                             className='flex flex-col place-self-center group relative overflow-hidden text-gray-100 bg-gray-800 dark:text-gray-900 dark:bg-gray-300 px-10 pt-5 pb-1 mt-4 mb-2 rounded-md hover:pt-3 hover:pb-3 active:scale-90 transition-all ease duration-200'
@@ -53,8 +61,7 @@ export function CardSlider(props) {
     } = props
     const { addItem } = useContext(StoreProvider)
 
-    const { name, description, images } = items[0]
-    const image = images.featured
+    const { name } = items[0]
 
     return (
             <div className='flex flex-col relative max-w-[264px] justify-between bg-zinc-200 dark:bg-zinc-800 rounded-lg shadow-lg shadow-zinc-400/50 dark:shadow-zinc-900/50 w-max h-max hover:shadow-none hover:scale-95 transition-all duration-150 ease-in'>
