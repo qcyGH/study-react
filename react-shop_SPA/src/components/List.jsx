@@ -38,6 +38,7 @@ export function List(props) {
                                                                 finalPrice={item.finalPrice}
                                                             /> : <Card
                                                                 image={item.items[0].images.featured}
+                                                                icon={item.items[0].images.icon}
                                                                 key={item.offerId} id={item.offerId}
                                                                 description={item.items[0].description}
                                                                 name={item.items[0].name}
@@ -72,6 +73,7 @@ export function List(props) {
                                                                 finalPrice={item.finalPrice}
                                                             /> : <Card
                                                                 image={item.items[0].images.featured}
+                                                                icon={item.items[0].images.icon}
                                                                 key={item.offerId} id={item.offerId}
                                                                 description={item.items[0].description}
                                                                 name={item.items[0].name}
@@ -106,6 +108,7 @@ export function List(props) {
                                                                 finalPrice={item.finalPrice}
                                                             /> : <Card
                                                                 image={item.items[0].images.featured}
+                                                                icon={item.items[0].images.icon}
                                                                 key={item.offerId} id={item.offerId}
                                                                 description={item.items[0].description}
                                                                 name={item.items[0].name}

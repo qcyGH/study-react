@@ -37,10 +37,10 @@ export function BundleModal(props) {
     }, [rootBundleModal, showModal, closeModal])
 
     return (
-        <div ref={bundleRef} className='relative text-sm text-gray-700 dark:text-gray-200 transition-color duration-150 ease-in break-words'>
+        <div ref={bundleRef} className='relative text-sm transition-color duration-150 ease-in break-words'>
             <button
              onClick={() => setShowModal((prevState) => !prevState)}
-             className='opacity-[0.60]'
+             className='bg-indigo-800 rounded-md px-2 text-gray-200'
             >
                 { title }
             </button>
