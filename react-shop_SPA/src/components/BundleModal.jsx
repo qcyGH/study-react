@@ -45,15 +45,26 @@ export function BundleModal(props) {
                 { title }
             </button>
 
-            {
-                showModal && <div ref={rootBundleModal} className='absolute top-0 left-0 bg-indigo-800 rounded-md z-10 p-1 pl-2 pr-4'>
-                                {
-                                    items.map(item => {
-                                        return <div className='text-gray-50' key={item.id}>{ item.name }</div>
-                                    })
-                                }
-                            </div>
-            }
+            <AnimatePresence exitBeforeEnter initial={ false }>
+                <motion.div
+                    style={{ display: 'inline-block', position: 'absolute', top: 0, left: 0, zIndex: 10}}
+                    key={showModal}
+                    initial={{ y: -30, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: 30, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                >
+                    {
+                        showModal && <div ref={rootBundleModal} className='bg-indigo-800 rounded-md z-10 py-1 pl-2 pr-6'>
+                            {
+                                items.map(item => {
+                                    return <div className='text-gray-50' key={item.id}>{ item.name }</div>
+                                })
+                            }
+                        </div>
+                    }
+                </motion.div>
+            </AnimatePresence>
         </div>
     )
 }
