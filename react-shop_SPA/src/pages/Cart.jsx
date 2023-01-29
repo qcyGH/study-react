@@ -1,12 +1,13 @@
-import { useState, useEffect,useContext } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import { Link } from 'react-router-dom'
 
 import { StoreProvider } from '../hoc/StoreProvider'
 import { CartItem, CartItemSlider } from '../components/CartItem'
+import { ChakraProvider } from '@chakra-ui/react'
 
 export function CartPage() {
 
-    const { orderList } = useContext(StoreProvider)
+    const { orderList, makePurchase } = useContext(StoreProvider)
 
     const [totalPrice, setTotalPrice] = useState(0)
 
@@ -64,6 +65,18 @@ export function CartPage() {
                 <Link to='/' className='opacity-100 text-slate-100 bg-orange-600 width-max px-6 py-2 my-2 rounded-md hover:scale-95 active:scale-90 transition-all ease duration-200'>Go to store page</Link>
             </div>
             }
+            <ChakraProvider>
+                {
+                orderList.length > 0 && <div className='mt-4 flex justify-center'>
+                                            <button
+                                                onClick={() => makePurchase()}
+                                                className='text-lg text-slate-100 bg-purple-600 width-max px-6 py-2 my-2 rounded-md hover:scale-95 active:scale-90 transition-all ease duration-200'
+                                            >
+                                                Purchase
+                                            </button>
+                                        </div>
+                }
+            </ChakraProvider>
         </>
     )
 }

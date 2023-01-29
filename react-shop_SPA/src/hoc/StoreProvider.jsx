@@ -1,6 +1,7 @@
 import React, { useState, useEffect, createContext } from 'react'
 import { API_KEY, API_URL_SHOP } from '../config'
 import { useToast } from '@chakra-ui/react'
+import { useAuth } from '../hooks/useAuth'
 
 export const StoreProvider = createContext()
 
@@ -9,6 +10,7 @@ export function StoreContext(props) {
     const [loading, setLoading] = useState(true)
     const [orderList, setOrderList] = useState([])
     const notification = useToast()
+    const { user } = useAuth()
 
     // get items from API
     useEffect(function getItems() {
@@ -86,8 +88,20 @@ export function StoreContext(props) {
         })
     }
 
+    const makePurchase = () => {
+
+        notification({
+            title: `Congratulations, ${user} All items was added to your Fortnite account`,
+            status: 'success',
+            duration: 3000,
+            isClosable: true,
+        })
+
+        setOrderList([])
+    }
+
     return (
-        <StoreProvider.Provider value={{items, loading, orderList, addItem, removeItem, changeQuantity}}>
+        <StoreProvider.Provider value={{items, loading, orderList, addItem, removeItem, changeQuantity, makePurchase}}>
             {props.children}
         </StoreProvider.Provider>
     )

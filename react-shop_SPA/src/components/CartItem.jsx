@@ -60,15 +60,15 @@ export function CartItem(props) {
                     />
                     <div className='flex absolute top-[50%] translate-y-[-50%] right-4'>
                         <IconButton
-                            aria-label='Increment count'
-                            icon={<MinusIcon w={12} h={12}/>}
+                            aria-label='Decrement count'
+                            icon={<MinusIcon boxSize={12}/>}
                             onClick={() => setCount((prevCount) => prevCount-1)}
                         >
                         </IconButton>
                         <IconButton
                             aria-label='Increment count'
                             className='ml-4'
-                            icon={<AddIcon w={12} h={12}/>}
+                            icon={<AddIcon boxSize={12}/>}
                             onClick={() => setCount((prevCount) => prevCount+1)}
                         >
                         </IconButton>
