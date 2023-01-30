@@ -12,28 +12,24 @@ export function Card(props) {
         id,
         name,
         description,
-        image,
+        img,
         icon,
         bundle,
         finalPrice,
     } = props
+
+    const image = img ? img : icon
 
     const { addItem } = useContext(StoreProvider)
 
     return (
             <div className='relative bg-zinc-200 dark:bg-zinc-800 rounded-lg shadow-lg shadow-zinc-400/50 dark:shadow-zinc-900/50 w-max h-max hover:shadow-none hover:scale-95 transition-all duration-150 ease-in'>
                 <div className='overflow-hidden rounded-t-md rounded-b bg-zinc-200 dark:bg-zinc-800 aspect-none transition-all duration-150 ease-in'>
-                    {
-                        image ? <img
-                                    src={image}
-                                    alt={name}
-                                    className='object-cover object-center w-72'
-                                /> : <img
-                                        src={icon}
-                                        alt={name}
-                                        className='object-cover object-center w-72'
-                                    />
-                    }
+                    <img
+                        src={image}
+                        alt={name}
+                        className='object-cover object-center w-72'
+                    />
                 </div>
                 <div className='flex flex-col justify-between max-w-[264px] p-3'>
                         <h3 className='text-sm text-gray-700 dark:text-gray-200 transition-color duration-150 ease-in'>

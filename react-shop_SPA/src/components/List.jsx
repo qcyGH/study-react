@@ -24,7 +24,7 @@ export function List(props) {
                                             key={item.offerId}
                                             name={item.bundle.name}
                                             description={item.bundle.info}
-                                            image={item.bundle.image}
+                                            img={item.bundle.image}
                                             bundle={item.items}
                                             finalPrice={item.finalPrice}
                                         />
@@ -37,7 +37,7 @@ export function List(props) {
                                                                 key={item.offerId} id={item.offerId}
                                                                 finalPrice={item.finalPrice}
                                                             /> : <Card
-                                                                image={item.items[0].images.featured}
+                                                                img={item.items[0].images.featured}
                                                                 icon={item.items[0].images.icon}
                                                                 key={item.offerId} id={item.offerId}
                                                                 description={item.items[0].description}
@@ -59,7 +59,7 @@ export function List(props) {
                                             key={item.offerId}
                                             name={item.bundle.name}
                                             description={item.bundle.info}
-                                            image={item.bundle.image}
+                                            img={item.bundle.image}
                                             bundle={item.items}
                                             finalPrice={item.finalPrice}
                                         />
@@ -72,7 +72,7 @@ export function List(props) {
                                                                 key={item.offerId} id={item.offerId}
                                                                 finalPrice={item.finalPrice}
                                                             /> : <Card
-                                                                image={item.items[0].images.featured}
+                                                                img={item.items[0].images.featured}
                                                                 icon={item.items[0].images.icon}
                                                                 key={item.offerId} id={item.offerId}
                                                                 description={item.items[0].description}
@@ -94,7 +94,7 @@ export function List(props) {
                                             key={item.offerId}
                                             name={item.bundle.name}
                                             description={item.bundle.info}
-                                            image={item.bundle.image}
+                                            img={item.bundle.image}
                                             bundle={item.items}
                                             finalPrice={item.finalPrice}
                                         />
@@ -107,7 +107,7 @@ export function List(props) {
                                                                 key={item.offerId} id={item.offerId}
                                                                 finalPrice={item.finalPrice}
                                                             /> : <Card
-                                                                image={item.items[0].images.featured}
+                                                                img={item.items[0].images.featured}
                                                                 icon={item.items[0].images.icon}
                                                                 key={item.offerId} id={item.offerId}
                                                                 description={item.items[0].description}
