@@ -32,14 +32,17 @@ export function User(props) {
     return (
         <>
             <div className='relative'>
-                <span className='flex items-center p-2' ref={userRef}>
+                <span className='flex items-center' ref={userRef}>
                     <IconButton
-                    aria-label='user'
-                    onClick={() => setShowModal((prevState) => !prevState)}
-                    className='text-zinc-900 dark:text-zinc-100'
-                    icon={
-                        <UserIcon w={18} h={18} />
-                    }
+                        bg='transparent'
+                        _active={{ bg: 'transparent' }}
+                        _hover={{ bg: 'transparent' }}
+                        aria-label='user'
+                        onClick={() => setShowModal((prevState) => !prevState)}
+                        className='text-zinc-900 dark:text-zinc-100'
+                        icon={
+                            <UserIcon w={18} h={18} />
+                        }
                     >
                     </IconButton>
                 </span>

@@ -70,10 +70,10 @@ export function ThemeSwitcher() {
     )
 
     return (
-        <span>
+        <span className='flex items-center justify-center w-[18px] h-[18px]'>
             <AnimatePresence exitBeforeEnter initial={ false }>
                 <motion.div
-                    style={{ display: 'inline-block'}}
+                    className='flex items-center justify-center w-[18px] h-[18px]'
                     key={darkTheme}
                     initial={{ y: -20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
@@ -81,9 +81,11 @@ export function ThemeSwitcher() {
                     transition={{ duration: 0.2 }}
                 >
                     <IconButton
+                        bg='transparent'
+                        _active={{ bg: 'transparent' }}
+                        _hover={{ bg: 'transparent' }}
                         aria-label="Change theme"
                         onClick={() => setDarkTheme(!darkTheme)}
-                        p='8'
                         icon={
                         darkTheme === false
                             ? <SunIcon w={18} h={18}/>

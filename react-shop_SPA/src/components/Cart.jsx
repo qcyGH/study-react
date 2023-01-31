@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useContext } from 'react'
+import React, { useState, useRef, useContext } from 'react'
 import { Icon, IconButton } from '@chakra-ui/react'
 import { StoreProvider } from '../hoc/StoreProvider'
 import { CartModal } from './CartModal'
@@ -32,12 +32,15 @@ export function Cart(props) {
         <div className='relative'>
             <span className='flex items-center p-2' ref={cartRef}>
                 <IconButton
-                aria-label='cart'
-                onClick={() => setShowModal((prevState) => !prevState)}
-                className='text-zinc-900 dark:text-zinc-100'
-                icon={
-                    <CartIcon w={18} h={17} />
-                }
+                    bg='transparent'
+                    _active={{ bg: 'transparent' }}
+                    _hover={{ bg: 'transparent' }}
+                    aria-label='cart'
+                    onClick={() => setShowModal((prevState) => !prevState)}
+                    className='text-zinc-900 dark:text-zinc-100'
+                    icon={
+                        <CartIcon w={18} h={17} />
+                    }
                 >
                 </IconButton>
                 {
