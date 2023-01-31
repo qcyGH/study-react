@@ -30,7 +30,7 @@ export function UserModal(props) {
 
     return (
         <div ref={rootUserModal}
-            className=' absolute bottom-[-1rem] right-0 translate-y-[100%] w-max py-2 pl-3 pr-4
+            className='absolute bottom-10 md:bottom-[-1rem] right-0 md:translate-y-[100%] w-max py-2 pl-3 pr-4
                         bg-zinc-300/90 dark:bg-zinc-800/90 rounded-md backdrop-blur-xl backdrop-saturate-150
                         shadow-lg shadow-zinc-400/50 dark:shadow-zinc-900/50
                         text-zinc-900 dark:text-zinc-200

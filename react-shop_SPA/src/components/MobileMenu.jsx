@@ -40,7 +40,8 @@ export function MobileMenu() {
                 bg='transparent'
                 _active={{ bg: 'transparent' }}
                 _hover={{ bg: 'transparent' }}
-                className='md:hidden absolute top-[50%] right-5 translate-y-[-50%] text-zinc-100 dark:text-zinc-900'
+                display={{ sm: 'inline-block', md: 'none'}}
+                className='absolute top-[50%] right-5 translate-y-[-50%] text-zinc-100 dark:text-zinc-900'
                 ref={btnRef}
                 onClick={onOpen}
                 icon={<HamburgerIcon className='bg-purple-700 p-[10px] rounded-md' boxSize='40px'/>}
